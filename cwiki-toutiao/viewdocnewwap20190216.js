@@ -117,7 +117,7 @@ var is_zhongsou = false;
 var is_maimai = false;
 $(document).ready(function () {
 
-	document.domain = 'localhost';
+	document.domain = 'liuqq168.github.io';
 
 	//热点参考 显示更多点击事件
 	$("#showMoreBaikeArchives").click(function(){
