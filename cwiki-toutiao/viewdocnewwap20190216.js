@@ -606,7 +606,7 @@ $(document).ready(function () {
 				});
 				var objParent = $(obj).parent(".scroller"),objAfter;
 				objParent.length>0?objAfter=objParent:objAfter=obj;
-				$(objAfter).after("<em class=\"btn_allTD2 mar-b15 gray7\" onclick='showTable($(this).parent().find(\"table\").eq(0));$(this).hide();'>查看完整表格<svg><use xlink:href='#ico-x3j'/></svg></em>");
+				$(objAfter).after("<em class=\"btn_allTD2 mar-b15 gray7\" onclick='showTable($(this).parent().find(\"table\").eq(0));$(this).hide();'>全部展开<svg><use xlink:href='#ico-x3j'/></svg></em>");
 			}
 		});
 
