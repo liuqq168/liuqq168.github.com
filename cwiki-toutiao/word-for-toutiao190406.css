@@ -188,8 +188,8 @@ table{border-collapse:collapse;border-spacing:0;empty-cells:show;}
 .pic-slide li{float:left;margin: 0;padding: 0;font-size: 0;overflow: hidden;}
 .pic-slide li .pinc-zoom{text-align: center;}
 .pic-slide li img{display: inline;-webkit-tap-highlight-color: rgba(0,0,0,0);vertical-align: middle;background-color: #000;}
-.img-view .bot{position: fixed;bottom:0;left: 0;height: 30px;width: 100%;background-image:-webkit-gradient(linear, left bottom, left top, color-stop(0, #000), color-stop(1, rgba(0,0,0,0)));}
-.img-view .bot .tit{color:#fff;height: 24px;line-height: 24px;padding-left:10px;margin-right:50px;overflow: hidden;}
+.img-view .bot{position: fixed;bottom:0;left: 0;height: 30px;width: 100%;background-image:-webkit-gradient(linear, left bottom, left top, color-stop(0, #000), color-stop(1, rgba(0,0,0,0)));padding-bottom:env(safe-area-inset-bottom);}
+.img-view .bot .tit{color:#fff;height: 24px;line-height: 24px;padding-left:10px;padding-bottom:env(safe-area-inset-bottom);margin-right:50px;overflow: hidden;}
 .img-view .bot .number{position: fixed;right: 0;bottom: 0;line-height: 24px;color:#fff;margin-top:-20px;margin-right: 10px;}
 .btn-down2{background-position: 0 0;width: 17px;height: 18px;overflow: hidden;display: inline-block;text-indent: -99em;}
 .btn-down2:active{background-position: -18px 0;}
@@ -224,7 +224,7 @@ table{border-collapse:collapse;border-spacing:0;empty-cells:show;}
 .hd_ad_app.link-app:after{content:'';display: block;height: 90px;}
 /*右下悬浮*/
 .fixed-bot{position:fixed;bottom:0;right:0;left:0;z-index:4;-webkit-transition: transform 200ms linear;transition: transform 200ms linear;transform: translateY(100%);}
-.fixed-bot .btn_menu{display:block;width:40px;height:40px;position:absolute;top:-57px;right:17px;background-color: #fff;border-radius: 50%;font-size:14px;color:#222;line-height: 40px;font-weight: bold;text-align: center;border: 1px solid #DCDCDC;box-shadow: 0 4px 8px 0 rgba(0,0,0,0.20);}
+.fixed-bot .btn_menu{display:block;width:40px;height:40px;position:absolute;top:-63px;right:17px;background-color: #fff;border-radius: 50%;font-size:14px;color:#222;line-height: 40px;font-weight: bold;text-align: center;border: 1px solid #DCDCDC;box-shadow: 0 4px 8px 0 rgba(0,0,0,0.20);}
 .fixed-bot .pop-speech{padding-bottom:env(safe-area-inset-bottom);}
 .fixed-bot.on{-webkit-transform: translateY(0);transform: translateY(0);}
 /*播音*/

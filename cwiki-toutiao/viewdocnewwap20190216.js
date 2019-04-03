@@ -347,12 +347,14 @@ $(document).ready(function () {
 		//	removePreventTouchMove();
 		$('#catalogue').removeClass('on');		
 		$("#fbg").hide();//浮层也隐藏
+		canScroll=1;
 		$('body').css("overflow","visible");//页面恢复滚动
 	};
 
 	var showCatalogue = function(){
 		//	addPreventTouchMove();
 		$('#catalogue').addClass('on');
+		canScroll=0;
 		$('body').css("overflow","hidden");//页面禁止滚动
 	};
 	//显示导航栏 按钮点击事件
