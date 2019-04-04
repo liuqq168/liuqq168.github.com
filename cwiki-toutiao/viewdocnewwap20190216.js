@@ -118,7 +118,7 @@ var is_zhongsou = false;
 var is_maimai = false;
 $(document).ready(function () {
 
-	document.domain = 'liuqq168.github.io';
+	document.domain = 'localhost';
 
 	//热点参考 显示更多点击事件
 	$("#showMoreBaikeArchives").click(function(){
@@ -607,10 +607,9 @@ $(document).ready(function () {
 				});
 				var objParent = $(obj).parent(".scroller"),objAfter;
 				objParent.length>0?objAfter=objParent:objAfter=obj;
-				$(objAfter).after("<em class=\"btn_allTD2 mar-b15 gray7\" onclick='showTable($(this).parent().find(\"table\").eq(0));$(this).hide();'>全部展开<svg><use xlink:href='#ico-x3j'/></svg></em>");
+				$(objAfter).after("<em class=\"btn_allTD2 mar-b15 gray7\" onclick='showTable($(this).parent().find(\"table\").eq(0),$(this))'>展开全部<svg><use xlink:href='#ico-x3j'/></svg></em>");
 			}
 		});
-
 		//后台过滤了菜单栏的超链接属性，在这里重新激活
 		$("#irwl").attr("href","//lanwei.baike.com/");
 		$("#ijiemi").attr("href","//plus.baike.com/m/nbaikejiemi");
@@ -1095,11 +1094,28 @@ function btn_menu(){
 }
 
 //隐藏过长的表格
-function showTable(tableObj){
+function showTable(tableObj,btn){
 	var trObj = $(tableObj).find('tr');
-	$(trObj).each(function(){
-		$(this).show();
-	});
+	if(!btn.hasClass("on")){
+		$(trObj).each(function(){
+			$(this).show();
+		});
+		btn.addClass("on");
+		btn.html("收起<svg><use xlink:href='#ico-x3j'/></svg>")
+	}else{
+		var i = 0;
+		var scrollto = $(tableObj).outerHeight() > $(window).height() ? $(window).scrollTop() - $(tableObj).outerHeight() : $(window).scrollTop();
+		$(trObj).each(function(){
+			if(i > 2){
+				$(this).hide();
+			}
+			i++;
+		});
+		btn.removeClass("on");
+		btn.html("展开全部<svg><use xlink:href='#ico-x3j'/></svg>")
+		$(window).scrollTop(scrollto)
+		//$('body').animate({scrollTop:scrollto}, 'normal');
+	}
 }
 
 //打开分享
@@ -2057,3 +2073,4 @@ if(window.location.host.indexOf(".hudong.com")>0 || window.location.host.indexOf
 	    }
 	}
 }
+
