@@ -1,11 +1,12 @@
 ﻿@charset "utf-8";/*public*/
+* {-webkit-text-size-adjust: none;-webkit-touch-callout: none;-webkit-user-select: none;user-select: none;-webkit-tap-highlight-color: transparent;}
 html,body,div,ul,li,h1,h2,h3,h4,p,input,form{margin:0;padding:0;list-style:none;border:0;outline:none;vertical-align:baseline;}
-body{font-family:"\5FAE\8F6F\96C5\9ED1",Helvetica;color:#222;font-size:17px;line-height: 29px;background:#fff;-webkit-text-size-adjust:none;}
+body{font-family: -apple-system,helvetica,sans-serif;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color:#222;font-size:17px;line-height: 29px;background:#fff;-webkit-text-size-adjust:none;}
 header,section,footer,img{display:block;margin:0;padding:0;}
 em{font-style:normal;}
 input,img{vertical-align:middle;border:0;}
-a{color:#2A90D7;text-decoration:none;-webkit-tap-highlight-color:#c8c8c8;}
-a:active{color:#FF8400;-webkit-tap-highlight-color:#c8c8c8;}
+a{color:#2A90D7;text-decoration:none;-webkit-touch-callout:none;-webkit-user-select:none;}
+a:active{color:#FF8400;outline:0}
 html,body{height:100%;}
 .cblue{color:#0077cc;}
 .clearfix:after{content:'\20';display:block;height:0;clear:both}
@@ -47,11 +48,11 @@ table{border-collapse:collapse;border-spacing:0;empty-cells:show;}
 .polysemy h6:before{content: '多义词-';display: inline-block;vertical-align:top;padding:1px 2px;}
 .btn-xpf{display: inline-block;}
 .polysemy .btn-xpf{margin:0 17px 0 10px;font-size: 1em;}
-.polysemy .btn-xpf:last-child{position:absolute;height: 0;overflow: hidden;-webkit-transform:translate3d(0,-20%,0);transform:translate3d(0,-20%,0);opacity:0;-webkit-transition: opacity 100ms 200ms,-webkit-transform 100ms 200ms;transition: transform 100ms 200ms,opacity 100ms 200ms;}
+.polysemy .btn-xpf:last-child{position:absolute;height: 0;overflow: hidden;-webkit-transform:translate3d(0,-50px,0);transform:translate3d(0,-50px,0);opacity:0;-webkit-transition: opacity 300ms,-webkit-transform 300ms;transition: transform 300ms,opacity 300ms;}
 .polysemy .btn-xpf:last-child svg{margin-left:5px;}
 .btn-xpf svg{fill:#999;display:inline-block;width:12px;height: 7px;vertical-align:top;margin-top:5px;}
 .btn-xpf.blue svg{fill:#2a90d7;}
-.polysemy ul{margin:0 17px;position:absolute;height:0;overflow:hidden;background-color: #F4F5F6;border-radius:4px 4px 0 0;-webkit-transform:translate3d(0,-20%,0);transform:translate3d(0,-20%,0);opacity:0;-webkit-transition: opacity 300ms,-webkit-transform 300ms;transition: transform 300ms,opacity 300ms;}
+.polysemy ul{margin:0 17px;position:absolute;height:0;overflow:hidden;background-color: #F4F5F6;border-radius:4px 4px 0 0;-webkit-transform:translate3d(0,-50px,0);transform:translate3d(0,-50px,0);opacity:0;-webkit-transition: opacity 300ms,-webkit-transform 300ms;transition: transform 300ms,opacity 300ms;}
 .polysemy li{padding:0 15px;line-height: 28px;}
 .polysemy li:first-child{padding-top:15px;}
 .polysemy li.current{color:#222;}
@@ -80,13 +81,14 @@ table{border-collapse:collapse;border-spacing:0;empty-cells:show;}
 #content .img *{text-align: center;}
 #content .img img{display:inline;max-width:100%;max-height: calc(100vw - 34px);border-radius: 3px;}
 #content .img strong{display:block;padding-top:8px;text-align: center;font-size:14px;font-weight:normal;line-height: 1.2;color:#999;}
+#content sup.refer{display: none;}/*隐藏引用角标*/
 /*信息模块*/
 .xinxi{margin:20px 17px 0 17px;} 
 .xinxi h3{padding:10px 0 5px 0;font-weight: normal;border-bottom:1px solid #E8E8E8;text-align:left; font-size:18px;display: none;}
 .xinxi .conBox{border-top:1px #e8e8e8 dashed;line-height: 160%;}
-.xinxi li:after{content: '';display: table;height: 0;clear: both;}
-.xinxi li p{margin-left:calc((100vw - 111px)/3 + 28px);}
-.xinxi span{display:block;float:left;width:calc((100vw - 111px)/3 + 21px);padding-right:7px;color:#999;}
+.xinxi li{display: -webkit-box;display: flex;}
+.xinxi li>p{flex:1;}
+.xinxi span{max-width:105px;min-width:70px;padding-right:20px;color:#999;}
 .xinxi img{display: inline;}
 .xinxi.lines3 li:nth-child(1n+6),
 .xinxi.lines3 ul:nth-child(1n+3){display: none;}
@@ -100,10 +102,11 @@ table{border-collapse:collapse;border-spacing:0;empty-cells:show;}
  /*相关人物*/
 .related .conBox{padding-left:17px;padding-right: 17px;overflow: hidden;}
 .related ul{padding-bottom:20px;display:-webkit-box;display:flex;}
-.related li{width:calc((100vw - 111px)/4 + 14px);margin-right: 7px;}
-.related li a{display:inline-block;min-width:66px;max-width:100%;font-size: 14px;line-height:14px;color:#222;overflow: hidden;text-align: center;text-overflow: ellipsis;white-space: nowrap;}
+.related li{width:calc((100vw - 111px)/4 + 14px);margin-right: 7px;flex:auto 0 0;}
+.related li a{display:inline-block;min-width:66px;max-width:100%;float:left;font-size: 14px;line-height:14px;color:#222;overflow: hidden;text-align: center;text-overflow: ellipsis;white-space: nowrap;}
 .related li img{width: 66px;height: 66px;border-radius: 50%;margin-bottom:10px;object-fit:cover;object-position: center top;}
 .related li a em{display: block;margin-top:10px;font-size: 12px;line-height:12px;color: #999;}
+.related li:last-child{width:auto;max-width:calc((100vw - 111px)/3 + 21px);margin-right: 0;padding-right:17px;}
 /*table*/
 #content table{margin:5px auto;font-size:12px;background:#f7f7f7;border:1px solid #ddd;}
 #content table td{margin:0;border:none;padding:10px;}
@@ -122,10 +125,10 @@ table{border-collapse:collapse;border-spacing:0;empty-cells:show;}
 #content .scrollable{position: relative;margin:10px -17px;}
 #content .scrollable .scroller{float:left;min-width: 100%;}
 #content .scrollable table{text-align: left;table-layout: fixed;margin:0;min-width:100%;width:auto;border:none;background:none;}
-#content .scrollable table th{border:none;background:#fafafa;padding:11px 7px 11px 0;font-weight: normal;color:#999;font-size: 16px;line-height: 24px;word-break:break-all;word-wrap:break-word;}
-#content .scrollable table td{border:none;background:none;vertical-align:middle;text-align: left;padding:11px 7px 11px 0;font-size: 16px;line-height:24px;word-break:break-all;word-wrap:break-word;}
+#content .scrollable table th{border:none;background:#fafafa;padding:11px 14px 11px 0;font-weight: normal;color:#999;font-size: 16px;line-height: 24px;word-break:break-all;word-wrap:break-word;}
+#content .scrollable table td{border:none;background:none;vertical-align:middle;text-align: left;padding:11px 14px 11px 0;font-size: 16px;line-height:24px;word-break:break-all;word-wrap:break-word;}
 #content .scrollable th,
-#content .scrollable tr:first-child>td{min-width:calc((100vw - 111px)/4 + 14px);}
+#content .scrollable tr:first-child>td{min-width:calc((100vw - 111px)/4 + 7px);}
 #content .scrollable table th:first-child,#content .scrollable table td:first-child{padding-left:17px;}
 #content .scrollable table th:last-child,#content .scrollable table td:last-child{padding-right:17px;}
 #content .scrollable table>tr:nth-child(2n+1),

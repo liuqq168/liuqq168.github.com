@@ -26,8 +26,9 @@ function rela_loaded () {
 //相关人物栏目增加左右滑动属性样式
 function rela_resize(){
 	var lis = $('#conBox li');
-	var windowWidth = 100;
-	$('#conBox ul').css({ width:(windowWidth*lis.length)+'px'});
+	var liWidth = (lis.outerWidth() + 7) * (lis.length-1);
+	var liWidth2 = lis.eq(lis.length - 1).outerWidth()
+	$('#conBox ul').css({width:(liWidth + liWidth2+17)+'px'});
 }
 
 //判断请求是否来自 高德？一点资讯？云知声？墨迹天气？ 根据fr参数判定
