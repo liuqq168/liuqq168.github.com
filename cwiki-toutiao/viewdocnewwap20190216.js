@@ -348,14 +348,12 @@ $(document).ready(function () {
 		$('#catalogue').removeClass('on');		
 		$("#fbg").hide();//浮层也隐藏
 		canScroll=1;
-		$('body').css("overflow","visible");//页面恢复滚动
 	};
 
 	var showCatalogue = function(){
 		//	addPreventTouchMove();
 		$('#catalogue').addClass('on');
 		canScroll=0;
-		$('body').css("overflow","hidden");//页面禁止滚动
 	};
 	//显示导航栏 按钮点击事件
 	$("#btn-catalogue").on('click',function(){
@@ -1222,7 +1220,12 @@ $(function(){
 			}
 		});
 	});
-
+	$(".fixed_bg").bind('touchmove',function(event){
+		if(canScroll == 0){
+			event.preventDefault();
+			event.stopPropagation();
+		}
+	})
 	//如果点开微信图标后 禁止底层内容滑动
 	document.addEventListener('touchmove', function(event) {
 		//$('#btn-catalogue').hide();
@@ -2053,4 +2056,3 @@ if(window.location.host.indexOf(".hudong.com")>0 || window.location.host.indexOf
 	    }
 	}
 }
-
