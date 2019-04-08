@@ -49,11 +49,11 @@ table{border-collapse:collapse;border-spacing:0;empty-cells:show;}
 .polysemy h6:before{content: '多义词-';display: inline-block;vertical-align:top;padding:1px 2px;}
 .btn-xpf{display: inline-block;}
 .polysemy .btn-xpf{margin:0 17px 0 10px;font-size: 1em;}
-.polysemy .btn-xpf:last-child{position:absolute;height: 0;overflow: hidden;-webkit-transform:translate3d(0,-50px,0);transform:translate3d(0,-50px,0);opacity:0;-webkit-transition: opacity 300ms,-webkit-transform 300ms;transition: transform 300ms,opacity 300ms;}
+.polysemy .btn-xpf:last-child{position:absolute;height: 0;overflow: hidden;-webkit-transform:translate3d(0,-30px,0);transform:translate3d(0,-30px,0);opacity:0;-webkit-transition: opacity 300ms,-webkit-transform 300ms;transition: transform 300ms,opacity 300ms;}
 .polysemy .btn-xpf:last-child svg{margin-left:5px;}
 .btn-xpf svg{fill:#999;display:inline-block;width:12px;height: 7px;vertical-align:top;margin-top:5px;}
 .btn-xpf.blue svg{fill:#2a90d7;}
-.polysemy ul{margin:0 17px;position:absolute;height:0;overflow:hidden;background-color: #F4F5F6;border-radius:4px 4px 0 0;-webkit-transform:translate3d(0,-50px,0);transform:translate3d(0,-50px,0);opacity:0;-webkit-transition: opacity 300ms,-webkit-transform 300ms;transition: transform 300ms,opacity 300ms;}
+.polysemy ul{margin:0 17px;position:absolute;height:0;overflow:hidden;background-color: #F4F5F6;border-radius:4px 4px 0 0;-webkit-transform:translate3d(0,-30px,0);transform:translate3d(0,-30px,0);opacity:0;-webkit-transition: opacity 300ms,-webkit-transform 300ms;transition: transform 300ms,opacity 300ms;}
 .polysemy li{padding:0 15px;line-height: 28px;}
 .polysemy li:first-child{padding-top:15px;}
 .polysemy li.current{color:#222;}
@@ -74,7 +74,7 @@ table{border-collapse:collapse;border-spacing:0;empty-cells:show;}
 #content{margin:5px 17px;}
 #content .h2_line{display: block;cursor:pointer;margin-left: 0;margin-right: 0;}
 #content .h2_line:after{position: absolute;top:-7px;left:-20px;right:-20px;margin-top: 0;}
-#content h3{margin:20px 0 15px 0;text-align: left;font-size: 1em;}
+#content h3{margin:20px 0 15px 0;text-align: left;font-size: 1em;line-height: 1;}
 #content p{margin:20px 0;}
 #content>div[id]~.h2_line{margin-top: 20px;}
 /*pic*/
@@ -95,7 +95,7 @@ table{border-collapse:collapse;border-spacing:0;empty-cells:show;}
 .xinxi.lines3 ul:nth-child(1n+3){display: none;}
 .xinxi ul:nth-child(1n+3){padding-top:10px;margin-top:10px;border-top:1px solid #E8E8E8;}
 .more-loding{background: #E0E0E0;line-height: 24px;height: 24px;font-size: 14px;color:#999;text-align: center;margin:15px 0;}
-.xinxi-unfold{text-align: center;padding:15px 0 20px 0;font-size: 14px;color:#999;line-height: 1.1;}
+.xinxi-unfold{text-align: center;padding:15px 0 20px 0;font-size: 14px;color:#999;line-height: 1;}
 .xinxi-unfold svg{display:inline-block;width:10px;height: 6px;margin-left:5px;margin-top: 5px;vertical-align:top;fill: #999;transform: rotate(180deg);}
 .xinxi-unfold:before{content: '收起'}
 .xinxi.lines3 .xinxi-unfold:before{content: '展开全部'}
@@ -136,6 +136,9 @@ table{border-collapse:collapse;border-spacing:0;empty-cells:show;}
 #content .scrollable table :first-child>tr:nth-child(2n+1),
 #content .scrollable table thead+tbody>tr:nth-child(2n){background-color: #fafafa;}
 #content .scrollable table td img{max-width:max-height: calc(100vw - 34px);}
+#content .scrollable .flex2{min-width: auto;width:calc((100vw - 111px)/2 + 28px);}
+#content .scrollable .flex0{min-width: auto;width:calc((100vw - 111px)/4 + 7px);}
+#content .scrollable .flex1{min-width: auto;}
 #content .scrollable .scroller+.btn_allTD2{float:left;width:100%;padding:15px 0;}
 /*nav*/
 .nav-module{margin-top:10px;overflow:hidden;height:auto;position:relative;clear:both;border:1px solid #e1e1e1;}
@@ -221,9 +224,9 @@ table{border-collapse:collapse;border-spacing:0;empty-cells:show;}
 .link-app{height: 44px;font-weight: normal;}
 .link-app a{display: block;}
 .link-app .baike-ico{width:40px;height:40px;;margin:0 8px 0 17px;float:left;display: block;}
-.link-app strong{display: block;font-size:16px;line-height:1.1;padding-top:3px;font-weight: normal;color: #222}
-.link-app p{font-size: 12px;color: #999;line-height: 1.1;margin-top:6px;}
-.link-app .btn{display:block;padding:0 17px;margin:8px 17px 0 0;line-height: 1.1;border-radius: 5px;float: right;color:#222;font-size: 12px;line-height: 28px;border:#505050 solid 1px;border-radius: 4px;}
+.link-app strong{display: block;font-size:16px;line-height:1;padding-top:3px;font-weight: normal;color: #222}
+.link-app p{font-size: 12px;color: #999;line-height: 1;margin-top:6px;}
+.link-app .btn{display:block;padding:0 17px;margin:8px 17px 0 0;line-height: 1;border-radius: 5px;float: right;color:#222;font-size: 12px;line-height: 28px;border:#505050 solid 1px;border-radius: 4px;}
 .hd_ad_app.link-app{height:auto;background-color: #F4F5F6;padding-bottom:env(safe-area-inset-bottom);}
 .hd_ad_app.link-app:before{content:'';display: block;height: 30px;}
 .hd_ad_app.link-app:after{content:'';display: block;height: 94px;}
@@ -256,7 +259,7 @@ table{border-collapse:collapse;border-spacing:0;empty-cells:show;}
 .word_menu.on{transform: translateX(0);}
 /*声明*/
 .foot{background-color: #F4F5F6;padding:30px 17px 0 17px;}
-.foot h3{font-size: 16px;line-height: 1.1}
+.foot h3{font-size: 16px;line-height: 1}
 .foot p{font-size:12px;line-height: 18px;margin: 15px 0;color:#505050;}
 .foot p>a{color:#505050;}
 .foot:after{content: '';display: block;height:1px;margin-top:30px;overflow:hidden;background-color:#e8e8e8;}

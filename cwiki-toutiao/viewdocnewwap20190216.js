@@ -118,7 +118,7 @@ var is_zhongsou = false;
 var is_maimai = false;
 $(document).ready(function () {
 
-	document.domain = 'localhost';
+	document.domain = 'liuqq168.github.io';
 
 	//热点参考 显示更多点击事件
 	$("#showMoreBaikeArchives").click(function(){
@@ -608,6 +608,20 @@ $(document).ready(function () {
 				var objParent = $(obj).parent(".scroller"),objAfter;
 				objParent.length>0?objAfter=objParent:objAfter=obj;
 				$(objAfter).after("<em class=\"btn_allTD2 mar-b15 gray7\" onclick='showTable($(this).parent().find(\"table\").eq(0),$(this))'>展开全部<svg><use xlink:href='#ico-x3j'/></svg></em>");
+			}
+			//少于4列对齐12栅格
+			var tdObj = $(obj).find('th').length>0?$(obj).find('th'):$(obj).find('tr').eq(0).find("td");
+			if(tdObj.length<4){
+				var n = 0;
+				$(tdObj).each(function(){
+					if(n < tdObj.length-1 && tdObj.length < 3){
+						$(this).addClass("flex2")
+					}else if(n < tdObj.length-1){
+						$(this).addClass("flex0")
+					}else{
+						$(this).addClass("flex1")
+					}n++;
+				})
 			}
 		});
 		//后台过滤了菜单栏的超链接属性，在这里重新激活
