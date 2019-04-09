@@ -74,7 +74,7 @@ table{border-collapse:collapse;border-spacing:0;empty-cells:show;}
 #content{margin:5px 17px;}
 #content .h2_line{display: block;cursor:pointer;margin-left: 0;margin-right: 0;}
 #content .h2_line:after{position: absolute;top:-7px;left:-20px;right:-20px;margin-top: 0;}
-#content h3{margin:20px 0 15px 0;text-align: left;font-size: 1em;line-height: 1;}
+#content h3{margin:20px 0 15px 0;text-align: left;font-size: 19px;line-height: 1;}
 #content p{margin:20px 0;}
 #content>div[id]~.h2_line{margin-top: 20px;}
 /*pic*/
