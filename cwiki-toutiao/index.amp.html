@@ -2,9 +2,8 @@
 <html ⚡>
   <head>
     <meta charset="utf-8" />
-    <link rel="shortcut icon" href="amp_favicon.png">
-    <link rel="canonical" href="/cwiki-toutiao/index.html">
     <title>迪丽热巴-互动百科</title>
+    <link rel="canonical" href="/cwiki-toutiao/index.html">
     <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
     <style amp-custom>
 html,body,div,ul,li,h1,h2,h3,h4,p,input,form{margin:0;padding:0;list-style:none;border:0;outline:none;vertical-align:baseline;}
@@ -61,12 +60,14 @@ body button{padding:0;border:none;background:none;outline: none;}
 #content table td{vertical-align:middle;text-align: left;padding:11px 14px 11px 0;font-size: 16px;line-height:24px;word-break:break-all;word-wrap:break-word;}
 #content th,
 #content tr:first-child>td{min-width:calc((100vw - 111px)/4 + 7px);}
-#content table th:first-child,#content table td:first-child{padding-left:17px;}
-#content table th:last-child,#content table td:last-child{padding-right:17px;}
+#content table th:first-child,
+#content table td:first-child{padding-left:17px;}
+#content table th:last-child,
+#content table td:last-child{padding-right:17px;}
 #content table>tr:nth-child(2n+1),
 #content table :first-child>tr:nth-child(2n+1),
 #content table thead+tbody>tr:nth-child(2n){background-color: #fafafa;}
-#content table td img{max-width:max-height: calc(100vw - 34px);}
+#content table td img{max-width:100%;max-height: calc(100vw - 34px);}
 #content .table td .img{border:0;background:none;padding:0}
 #content table[align="right"]{float:right;text-align:center;}
 #content .nav-module table{width:100%;}
@@ -75,6 +76,12 @@ body button{padding:0;border:none;background:none;outline: none;}
 #content table.img tbody{width:100%;display:table;}
 .scrollable{position: relative;margin:10px -17px;}
 .scrollable .scroller{overflow-x:auto;}
+.btn_allTD,.btn_allTD2{width:calc(100vw - 34px);text-align:center;font-size:14px;line-height:14px;padding:8px 0;}
+.btn_allTD{border-top:#e0e0e0 solid 1px;border-bottom:#e0e0e0 solid 1px;}
+.btn_allTD2 svg{fill:#999;display:inline-block;width:10px;height: 6px;vertical-align:top;margin-top:5px;margin-left:6px;}
+.btn_allTD2.on svg{transform: rotate(180deg);}
+.scroller tr:nth-child(1n+4){display:none}
+.scroller.on tr:nth-child(1n+4){display:table-row;}
 /*.scrollable .flex2{min-width: auto;width:calc((100vw - 111px)/2 + 28px);}
 .scrollable .flex0{min-width: auto;width:calc((100vw - 111px)/4 + 7px);}
 .scrollable .flex1{min-width: auto;}
@@ -85,6 +92,16 @@ body button{padding:0;border:none;background:none;outline: none;}
 .foot p{font-size:12px;line-height: 18px;margin: 15px 0;color:#505050;}
 .foot p>a{color:#505050;}
 .foot:after{content: '';display: block;height:1px;margin-top:30px;overflow:hidden;background-color:#e8e8e8;}
+/*--to download--*/
+.link-app{height: 44px;font-weight: normal;}
+.link-app a{display: block;}
+.link-app .baike-ico{margin:0 8px 0 17px;float:left;display: block;}
+.link-app strong{display: block;font-size:16px;line-height:1;padding-top:3px;font-weight: normal;color: #222}
+.link-app p{font-size: 12px;color: #999;line-height: 1;margin-top:6px;}
+.link-app .btn{display:block;padding:0 17px;margin:8px 17px 0 0;line-height: 1;border-radius: 5px;float: right;color:#222;font-size: 12px;line-height: 28px;border:#505050 solid 1px;border-radius: 4px;}
+.hd_ad_app.link-app{height:auto;background-color: #F4F5F6;padding-bottom:env(safe-area-inset-bottom);}
+.hd_ad_app.link-app:before{content:'';display: block;height: 30px;}
+.hd_ad_app.link-app:after{content:'';display: block;height: 94px;}
 /*目录*/
 .word_menu{background:#fff;min-width: 65vw;}
 .word_menu li{font-size: 16px;position: relative;padding-left:30px;}
@@ -132,11 +149,11 @@ body button{padding:0;border:none;background:none;outline: none;}
 .btnSound.on .isound>i{-webkit-animation:specking 1.2s step-end 1;animation:specking 1.2s step-end 1;}
 @-webkit-keyframes specking{0%{transform:translateY(0);}30%{transform:translateY(-24px);}60%{transform:translateY(-48px);}100%{transform:translateY(-48px);}}
 @keyframes specking{0%{transform:translateY(0);}30%{transform:translateY(-24px);}60%{transform:translateY(-48px);}100%{transform:translateY(-48px);}}
-
     </style>
     <!--bind--><script async custom-element="amp-bind" src="https://cdn.ampproject.org/v0/amp-bind-0.1.js"></script>
     <!--目录跳转--><script async custom-element="amp-sidebar" src="https://cdn.ampproject.org/v0/amp-sidebar-0.1.js"></script>
-    <!--图册--><script async custom-element="amp-lightbox-gallery" src="https://cdn.ampproject.org/v0/amp-lightbox-gallery-0.1.js"></script><script async custom-element="amp-carousel" src="https://cdn.ampproject.org/v0/amp-carousel-0.1.js"></script>
+    <!--图册--><script async custom-element="amp-lightbox-gallery" src="https://cdn.ampproject.org/v0/amp-lightbox-gallery-0.1.js"></script>
+    <!--横滚--><script async custom-element="amp-carousel" src="https://cdn.ampproject.org/v0/amp-carousel-0.1.js"></script>
     <script async src="https://cdn.ampproject.org/v0.js"></script>
     <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
   </head>
@@ -260,8 +277,10 @@ body button{padding:0;border:none;background:none;outline: none;}
    </div> 
    <span class="h2_line" id="5">影视作品 </span> 
    <div id="18"> 
-    <a name="7" id="7"></a><h3>参演电视剧</h3> 
-    <div class="scrollable clearfix" id="scrollTable_1"><div class="scroller">
+    <a name="7" id="7"></a><h3>参演电视剧</h3>
+    <amp-state id="scrollTable_1Height"><script type="application/json">184</script></amp-state>
+    <amp-state id="scrollTable_1Row"><script type="application/json">19</script></amp-state>
+    <amp-carousel class="scrollable" height="184" [height]="scrollTable_1Height" layout="fixed-height" type="carousel">
 <table class="table"> 
 <thead> 
  <tr> 
@@ -400,9 +419,14 @@ body button{padding:0;border:none;background:none;outline: none;}
   <td><a href="//www.baike.com/cwiki/%E9%98%BF%E5%8D%9C%E5%8A%9B%E5%85%8B%E6%9C%A8%C2%B7%E9%98%BF%E5%8D%9C%E6%9D%A5%E6%8F%90&fr=toutiao" class="innerlink" title="阿卜力克木·阿卜来提">阿卜力克木·阿卜来提</a><br /></td> 
  </tr> 
 </tbody> 
-</table></div></div> 
+</table>
+</amp-carousel>
+<button class="btn_allTD2 gray7" [hidden]="scrollTable_1Height!=184" on="tap:AMP.setState({ scrollTable_1Height:scrollTable_1Row * 46})">加载全部 <svg><use xlink:href="#ico-x3j"></use></svg></button>
+<button class="btn_allTD2 on gray7" hidden [hidden]="scrollTable_1Height==184" on="tap:AMP.setState({ scrollTable_1Height: 184 })">返回 <svg><use xlink:href="#ico-x3j"></use></svg></button>
+
     <a name="9" id="9"></a><h3>参演电影  </h3> 
-    <div class="scrollable clearfix" id="scrollTable_2"><div class="scroller">
+    <amp-state id="scrollTable_2"><script type="application/json">"scroller"</script></amp-state>
+    <div class="scrollable clearfix"><div class="scroller" [class]="scrollTable_2">
 <table class="table"> 
 <thead> 
  <tr> 
@@ -452,6 +476,8 @@ body button{padding:0;border:none;background:none;outline: none;}
 </tbody> 
 </table>
 </div></div> 
+<button class="btn_allTD2 gray7" [hidden]="scrollTable_2 == 'scroller on'" on="tap:AMP.setState({ scrollTable_2: 'scroller on' })">加载全部 <svg><use xlink:href="#ico-x3j"></use></svg></button>
+<button class="btn_allTD2 on gray7" hidden [hidden]="scrollTable_2 == 'scroller'" on="tap:AMP.setState({ scrollTable_2: 'scroller' })">返回 <svg><use xlink:href="#ico-x3j"></use></svg></button>
     <a name="11" id="11"></a><h3>网络剧</h3> 
     <div class="scrollable clearfix" id="scrollTable_3"><div class="scroller">
 <table class="table"> 
@@ -539,8 +565,7 @@ body button{padding:0;border:none;background:none;outline: none;}
   <td>​ 2018-02-26</td> 
  </tr> 
 </tbody> 
-</table>
-</div></div> 
+</table></div></div>
     <a name="15" id="15"></a><h3>固定综艺</h3> 
     <div class="scrollable clearfix" id="scrollTable_5"><div class="scroller">
 <table class="table"> 
@@ -886,6 +911,12 @@ body button{padding:0;border:none;background:none;outline: none;}
   <h3>免责声明</h3>
   <p><a href="http://i.baike.com/profile.do?useriden=jRwNBCFgWA1FeA0BD">luckyivy</a>创建，<a href="http://i.baike.com/profile.do?useriden=tAAREBgBTX0lJXQUL">一颗小白菜儿</a>、<a href="http://i.baike.com/profile.do?useriden=yQ11RVURfAmdSeElI">农夫山泉有点甜</a>、<a href="http://i.baike.com/profile.do?useriden=sZXFncGF4XQ1eUlhn">这世界那么冷</a>、<a href="http://i.baike.com/profile.do?useriden=ARVtRWUEHE0UFBVhF">momo1133</a>、<a href="http://i.baike.com/profile.do?useriden=DdncDBV9SBXxWA3F8">夏华秋实</a>等参与编辑。</p>
   <p>互动百科的词条（含所附图片）系由网友上传，如果涉嫌侵权，请与客服联系，我们将按照法律之相关规定及时进行处理。如需转载，请注明来源于www.baike.com。</p>
+</div>
+<div class="hd_ad_app link-app"> 
+  <amp-img width="40" height="40" class="baike-ico" src="//www.huimg.cn/public/images/baike-ico72x72.png"></amp-img> 
+  <a class="btn" id="link" href="https://lkme.cc/d0D/gngFewbCJ">打开APP</a> 
+  <strong>互动百科</strong> 
+  <p>想你所想知你所知</p> 
 </div>
 <amp-sidebar id="sidebar" layout="nodisplay" side="right">
   <div class="word_menu"> 
