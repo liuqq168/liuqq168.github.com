@@ -163,7 +163,7 @@ body button{padding:0;border:none;background:none;outline: none;}
   <figure class="zyimg"><amp-img lightbox="caption" src="//a4.att.hudong.com/04/09/20300543525109150900091910824_0401_480_600.jpg" layout="responsive" width="375" height="233"></amp-img><figcaption>摘要图</figcaption></figure>
   <button [hidden]="audioPlay.show == 'fixed-bot on'" class="btnSound" on="tap:AMP.setState({audioPlay:{
     'show':'fixed-bot on',
-    'page':'/cwiki-toutiao/iframe.audio.html?count=9&url=//a8.baike.com/9A/83/9A83E575336A53F9AFB0E03A42C62F40/BAECDF05E36C66FFFEBF5AAAA9497B48.mp3'
+    'page':'https://liuqq168.github.io/cwiki-toutiao/iframe.audio.html?count=9&url=//a8.baike.com/9A/83/9A83E575336A53F9AFB0E03A42C62F40/BAECDF05E36C66FFFEBF5AAAA9497B48.mp3'
   }})">
     <span class="isound"><i>
    <svg><use xlink:href="#ico-sound" /></svg></i></span>播报</button>
@@ -947,7 +947,7 @@ body button{padding:0;border:none;background:none;outline: none;}
   <!-- <button on="tap:sidebar.toggle">Toggle sidebar</button> -->
 <amp-state id="audioPlay"><script type="application/json">{
   "show":"fixed-bot",
-  "page":""
+  "page":"https://liuqq168.github.io/cwiki-toutiao/iframe.test.html"
 }</script></amp-state>
 <div class="fixed-bot" [class]="audioPlay.show"> 
   <button class="btn_menu" on="tap:sidebar.open">目录</button>
@@ -958,13 +958,13 @@ body button{padding:0;border:none;background:none;outline: none;}
         sandbox="allow-scripts allow-same-origin"
         layout="responsive"
         frameborder="0"
-        src="/cwiki-toutiao/iframe.test.html"
+        src="https://liuqq168.github.io/cwiki-toutiao/iframe.test.html"
         [src]="audioPlay.page">
       </amp-iframe>
     </div>
     <button class="iclose" on="tap:AMP.setState({audioPlay:{
       'show':'fixed-bot',
-      'page':'/cwiki-toutiao/iframe.test.html'
+      'page':'https://liuqq168.github.io/cwiki-toutiao/iframe.test.html'
     }})"><svg><use xlink:href="#ico-close" /></svg></button>
   </div>
 </div>
