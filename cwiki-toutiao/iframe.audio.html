@@ -128,7 +128,8 @@ var createAudio = function(url,flag,indexFlag){
 		audioSummary.attr('preload','true');
 		audioSummary.attr('class','audioSummary');			
 		audioSummary.appendTo('body');
-	}
+  }
+  nowAudio = $("#nowAudio"); 
 }
 function getUrlKey(name){
     let result=''
@@ -143,43 +144,43 @@ function getUrlKey(name){
 function soundPlay(){
   if(btnSound.className=="btnSound"){
     popSound.className="fixed-bot on"
-    //btnSound.getElementsByTagName("svg")[0].innerHTML = `<use xlink:href="#ico-sound2" />`
     btnSound.className = "btnSound on"
     popSound.getElementsByClassName("isound")[0].getElementsByTagName("i")[0].style=""
   }else{
     popSound.className="fixed-bot"
-    //btnSound.getElementsByTagName("svg")[0].innerHTML = `<use xlink:href="#ico-sound" />`
     btnSound.className = "btnSound"
     $('.istop').click();
     $('.iplay').hide();
     $('.ipause').show();
     return;
   }
-  nowAudio = $("#nowAudio");  
   nowAudio[0].play().catch(function(error) {
-    console.error('抱歉，音频初始化失败，请点击播放按钮重新播放',error);
-    soundPause();
-});;
+      console.error('抱歉，初次播放失败，请点击播放按钮重新播放',error);
+      setTimeout(() => {
+        soundPause()
+      }, 10);     
+    });
   nowAudio[0].addEventListener('ended', function () {
     var nextAudioSrc = $("#nextAudio").attr("src");
     if(undefined != nextAudioSrc && ''!=nextAudioSrc){
       nowAudio.attr('src',nextAudioSrc);
         $("#nextAudio").attr("src",nextUrl(nextAudioSrc));
     }				
-    nowAudio[0].play();
+    nowAudio[0].play()
   });	
 }
 function soundPause(){
   if(popSound.getElementsByClassName("iplay")[0].style.display == "none" ){
-  popSound.getElementsByClassName("ipause")[0].style.display = "none"
-  popSound.getElementsByClassName("iplay")[0].style = ""
-  popSound.getElementsByClassName("isound")[0].getElementsByTagName("i")[0].style.animationPlayState="paused"
+    popSound.getElementsByClassName("ipause")[0].style.display = "none"
+    popSound.getElementsByClassName("iplay")[0].style = ""
+    popSound.getElementsByClassName("isound")[0].getElementsByTagName("i")[0].style.animationPlayState="paused"
+    nowAudio[0].pause();
   }else{
-  popSound.getElementsByClassName("iplay")[0].style.display = "none"
-  popSound.getElementsByClassName("ipause")[0].style = ""
-  popSound.getElementsByClassName("isound")[0].getElementsByTagName("i")[0].style = ""    
+    popSound.getElementsByClassName("iplay")[0].style.display = "none"
+    popSound.getElementsByClassName("ipause")[0].style = ""
+    popSound.getElementsByClassName("isound")[0].getElementsByTagName("i")[0].style = ""
+    nowAudio[0].play();
   }
-  nowAudio[0].pause();
 }
 	btnSound.onclick=function(){soundPlay()}  
 	popSound.getElementsByClassName("ipause")[0].onclick = function(){soundPause()}
@@ -220,7 +221,7 @@ $(document).ready(function(){
           createAudio(surl,0,1);
           setTimeout(function() {
             createAudio(nextUrl(surl),1,2);
-            soundPlay();
+            btnSound.onclick()
           }, 1500);
         });
   }, 1000);
