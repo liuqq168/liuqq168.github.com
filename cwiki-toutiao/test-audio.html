@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  这里测试 iframe 传参
+  <p><button onclick="toQuery()">点击传参</button> <button onclick="document.getElementById('myiframe').src='iframe.test.html'">恢复</button></p>
+  <iframe frameborder="0" src="iframe.test.html" id="myiframe" width="300" height="40"></iframe>
+  <script>
+function toQuery(){
+  myiframe = document.getElementById("myiframe");
+  myiframe.src="iframe.audio.html?count=9&url=//a8.baike.com/9A/83/9A83E575336A53F9AFB0E03A42C62F40/BAECDF05E36C66FFFEBF5AAAA9497B48.mp3"
+}
+  </script>
+</body>
+</html>
