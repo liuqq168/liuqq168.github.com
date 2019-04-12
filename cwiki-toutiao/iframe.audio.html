@@ -70,10 +70,12 @@ $(document).ready(function(){
           createAudio(surl,0,1);															
           setTimeout(function() {
             createAudio(nextUrl(surl),1,2);
-          }, 1000);
+          }, 1500);
         });
-        document.getElementById("btn-sound").onclick()
   }, 1000);
+  setTimeout(function(){
+    document.getElementById("btn-sound").onclick()
+  },2000)
 })
 </script>
 
