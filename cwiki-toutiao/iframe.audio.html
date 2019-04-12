@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+<style>
+body{margin:0;padding:0;font-size:15px;line-height:22px;}
+.pop-speech>div{padding-top:2px;}
+.pop-speech .command{float: right;padding-top:2px;}
+.pop-speech svg{display: inline-block;vertical-align: top;margin-left: 25px;}
+.pop-speech .iplay{width:20px;height:20px;}
+.pop-speech .ipause{width:12px;height:16px;margin-top:2px;margin-right: 5px;}
+.pop-speech .iclose{width:22px;height:22px;margin-top:2px;background: none}
+.pop-speech .isound{margin-top:-2px;}
+.isound svg{width:24px;height:24px;margin-left:0;}
+.isound{overflow:hidden;display: inline-block;vertical-align:top;width:24px;height:24px;margin-right: 5px;}
+.isound>i{display:block;}
+.pop-speech .isound>i{-webkit-animation:specking 1.2s step-end infinite;;animation:specking 1.2s step-end infinite;}
+@-webkit-keyframes specking{0%{transform:translateY(0);}30%{transform:translateY(-24px);}60%{transform:translateY(-48px);}100%{transform:translateY(-48px);}}
+@keyframes specking{0%{transform:translateY(0);}30%{transform:translateY(-24px);}60%{transform:translateY(-48px);}100%{transform:translateY(-48px);}}
+</style>
+</head>
+<body>
+<input type="hidden" value="" id="ttsCount">
+<span id="btn-sound" class="btnSound" 
+  soundurl=""
+></span>
+<div id="handDiv">
+<div class="pop-speech" id="soundPlay"> 
+  <span class="command"> 
+    <svg class="iplay" style="display:none"> 
+    <use xlink:href="#ico-play" /> 
+    </svg> 
+    <svg class="ipause"> 
+    <use xlink:href="#ico-pause" /> 
+    </svg>
+    <i class="istop" style="display: none;"></i>
+    <i class="iclose" style="display: none;"></i> 
+  </span> 
+  <div><span class="isound"><i>
+    <svg><use xlink:href="#ico-sound-mov1" /></svg><svg><use xlink:href="#ico-sound-mov2" /></svg><svg><use xlink:href="#ico-sound-mov3" />
+    </svg></i></span>正在收听：摘要</div> 
+</div>
+</div>
+<script src="//www.huimg.cn/app/guancha/jquery-2.0.3.min.js"></script> 
+<script src="//www.huimg.cn/wap/moji/svgicon-for-toutiao190406.js"></script> 
+<script src="//www.huimg.cn/wap/js/soundManage-20190406.js"></script> 
+<script>
+function getUrlKey(name){
+    let result=''
+    result = decodeURIComponent((new RegExp('[?|&]'+name+'='+'([^&;]+?)(&|#|;|$)').exec(location.href)||[,""])[1].replace(/\+/g,'%20'))||null;
+    if (result == location.hash||result == null) result = ''
+    return result;
+}
+$(document).ready(function(){
+  $("#ttsCount").attr({value:getUrlKey('count')}) 
+  $("#btn-sound").attr({soundurl:getUrlKey('url')})
+  if($("#btn-sound").attr("soundurl") === "") return;
+  setTimeout(function() {
+    $('.btnSound').each(
+        function() {
+          var surl = $(this)
+              .attr('soundUrl');
+              var str =  surl.split(".mp3");
+              if(str.length>1){
+                surl = str[0]+"_1.mp3"+str[1];
+              }
+          createAudio(surl,0,1);															
+          setTimeout(function() {
+            createAudio(nextUrl(surl),1,2);
+          }, 1000);
+        });
+        document.getElementById("btn-sound").onclick()
+  }, 1000);
+})
+</script>
+
+
+</body>
+</html>

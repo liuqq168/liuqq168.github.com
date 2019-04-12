@@ -6,7 +6,7 @@
     <link rel="canonical" href="/cwiki-toutiao/index.html">
     <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
     <style amp-custom>
-html,body,div,ul,li,h1,h2,h3,h4,p,input,form{margin:0;padding:0;list-style:none;border:0;outline:none;vertical-align:baseline;}
+html,body,div,ul,li,h1,h2,h3,h4,p,input,form{margin:0;padding:0;list-style:none;border:0;outline:none;vertical-align:baseline;word-wrap:break-word;word-break:break-all;}
 body{font-family: -apple-system,helvetica,sans-serif;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color:#222;font-size:17px;line-height: 29px;background:#fff;-webkit-text-size-adjust:none;}
 header,section,footer,img{display:block;margin:0;padding:0;}
 em{font-style:normal;}
@@ -48,7 +48,7 @@ body button{padding:0;border:none;background:none;outline: none;}
 /*正文*/
 #content>div,#content>.h2_line{padding-left:17px;padding-right:17px;}
 #content .h2_line{display: block;border-top: 7px #F4F5F6 solid;padding-top:20px;margin-bottom:20px;position:relative;font-weight: 700;font-size: 21px;line-height: 21px}
-#content h3{margin:20px 0 15px 0;text-align: left;font-size: 1em;line-height: 1;}
+#content h3{margin:20px 0 15px 0;text-align: left;font-size: 19px;line-height: 1;}
 #content p{margin:20px 0;}
 #content>div[id]~.h2_line{margin-top: 20px;}
 #content .img{margin:20px 0;text-align: center;width: 100%}
@@ -139,7 +139,7 @@ body button{padding:0;border:none;background:none;outline: none;}
 /*.pop-speech .command{float: right;padding-top:2px;}
 .pop-speech .iplay{width:20px;height:20px;}
 .pop-speech .ipause{width:12px;height:16px;margin-top:2px;margin-right: 5px;}*/
-.pop-speech amp-audio{flex:1;}
+.pop-speech .amp-audio{flex:1;}
 .pop-speech .iclose{flex:auto 0 0;}
 .pop-speech .iclose svg{width:22px;height:22px;margin-top:2px;background: none}
 .isound svg{width:24px;height:24px;margin-left:0;}
@@ -154,16 +154,20 @@ body button{padding:0;border:none;background:none;outline: none;}
     <!--目录跳转--><script async custom-element="amp-sidebar" src="https://cdn.ampproject.org/v0/amp-sidebar-0.1.js"></script>
     <!--图册--><script async custom-element="amp-lightbox-gallery" src="https://cdn.ampproject.org/v0/amp-lightbox-gallery-0.1.js"></script>
     <!--横滚--><script async custom-element="amp-carousel" src="https://cdn.ampproject.org/v0/amp-carousel-0.1.js"></script>
+    <!--iframe--><script async custom-element="amp-iframe" src="https://cdn.ampproject.org/v0/amp-iframe-0.1.js"></script>
     <script async src="https://cdn.ampproject.org/v0.js"></script>
     <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
   </head>
   <body>
 <header class="word-top"> 
   <figure class="zyimg"><amp-img lightbox="caption" src="//a4.att.hudong.com/04/09/20300543525109150900091910824_0401_480_600.jpg" layout="responsive" width="375" height="233"></amp-img><figcaption>摘要图</figcaption></figure>
-  <button [hidden]="audioShow == 'fixed-bot on'" class="btnSound" on="tap:AMP.setState({audioShow:'fixed-bot on'})">
+  <button [hidden]="audioPlay.show == 'fixed-bot on'" class="btnSound" on="tap:AMP.setState({audioPlay:{
+    'show':'fixed-bot on',
+    'page':'/cwiki-toutiao/iframe.audio.html?count=9&url=//a8.baike.com/9A/83/9A83E575336A53F9AFB0E03A42C62F40/BAECDF05E36C66FFFEBF5AAAA9497B48.mp3'
+  }})">
     <span class="isound"><i>
    <svg><use xlink:href="#ico-sound" /></svg></i></span>播报</button>
-  <button hidden [hidden]="audioShow == 'fixed-bot'" class="btnSound on" on="tap:AMP.setState({audioShow:'fixed-bot on'})">
+  <button hidden [hidden]="audioPlay.show == 'fixed-bot'" class="btnSound on">
     <span class="isound"><i>
    <svg><use xlink:href="#ico-sound" /></svg><svg><use xlink:href="#ico-sound-mov2" /></svg><svg><use xlink:href="#ico-sound-mov3" />
    </svg></i></span>播报</button>
@@ -941,15 +945,30 @@ body button{padding:0;border:none;background:none;outline: none;}
   </div> 
 </amp-sidebar>
   <!-- <button on="tap:sidebar.toggle">Toggle sidebar</button> -->
-<amp-state id="audioShow"><script type="application/json">"fixed-bot"</script></amp-state>
-<div class="fixed-bot" [class]="audioShow"> 
+<amp-state id="audioPlay"><script type="application/json">{
+  "show":"fixed-bot",
+  "page":""
+}</script></amp-state>
+<div class="fixed-bot" [class]="audioPlay.show"> 
   <button class="btn_menu" on="tap:sidebar.open">目录</button>
-  <div class="pop-speech" id="soundPlay"> 
-
-    <button class="iclose" on="tap:AMP.setState({audioShow:'fixed-bot'})"><svg><use xlink:href="#ico-close" /></svg></button>
+  
+  <div class="pop-speech">
+    <div class="amp-audio">
+      <amp-iframe width="300" height="40"
+        sandbox="allow-scripts allow-same-origin"
+        layout="responsive"
+        frameborder="0"
+        src="/cwiki-toutiao/iframe.test.html"
+        [src]="audioPlay.page">
+      </amp-iframe>
+    </div>
+    <button class="iclose" on="tap:AMP.setState({audioPlay:{
+      'show':'fixed-bot',
+      'page':'/cwiki-toutiao/iframe.test.html'
+    }})"><svg><use xlink:href="#ico-close" /></svg></button>
   </div>
 </div>
-<!-- <amp-state id="wikiPhotos">https://ia801402.us.archive.org/16/items/EDIS-SRP-0197-06/EDIS-SRP-0197-06.mp3 ////a8.baike.com/9A/83/9A83E575336A53F9AFB0E03A42C62F40/BAECDF05E36C66FFFEBF5AAAA9497B48.mp3?title=迪丽热巴
+<!-- <amp-state id="wikiPhotos">
   <script type="application/ld+json">
     
   </script>
@@ -970,15 +989,9 @@ body button{padding:0;border:none;background:none;outline: none;}
     <symbol viewBox="0 0 24 24" id="ico-sound-mov3">
       <path style="fill:none" d="M0 0h24v24H0z"/><g transform="translate(2 2)"><path style="fill:none" d="M0 0h20v20H0z"/><g transform="translate(0 1)" stroke-miterlimit="10" fill="none"><path d="M15.667 15.509a7.99 7.99 0 0 0 3.349-6.508 7.99 7.99 0 0 0-3.349-6.51" opacity=".3" stroke="#222" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M14 11.946a4.023 4.023 0 0 0 .539-.586 3.982 3.982 0 0 0 .79-2.387 3.982 3.982 0 0 0-.805-2.407A4.023 4.023 0 0 0 14 6" opacity=".6" stroke="#222" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><g><path d="M10.21 15.963L4.7 12.029H2a2 2 0 0 1-2-2v-4a2 2 0 0 1 2-2h2.7L10.21.094A.5.5 0 0 1 11 .5v15.057a.5.5 0 0 1-.5.5.492.492 0 0 1-.29-.094z" transform="translate(0 .972)"/><path d="M9.5 13.613V2.443L5.57 5.25l-.39.28H2a.5.5 0 0 0-.5.5v4a.5.5 0 0 0 .5.5h3.18l.391.279L9.5 13.613m.998 2.444a.492.492 0 0 1-.288-.094L4.7 12.028H2a2 2 0 0 1-2-2v-4a2 2 0 0 1 2-2h2.7L10.21.094A.5.5 0 0 1 11 .5v15.055a.5.5 0 0 1-.502.501z" fill="#222" transform="translate(0 .972)"/></g></g></g>
     </symbol>
-    <symbol viewBox="0 0 20 20" id="ico-play">
-      <g data-name="Group 3" fill="none"><path d="M0 0h20v20H0z"/><g data-name="Play" stroke-miterlimit="10"><path d="M2 10.014l.007 7.147a1.85 1.85 0 0 0 2.776 1.619l6.145-3.573 6.145-3.573a1.876 1.876 0 0 0 0-3.238l-6.146-3.574-6.144-3.574A1.864 1.864 0 0 0 2.007 2.9z"/><path d="M4.007 3.11L4 10.013l.007 6.906 5.915-3.44 5.955-3.464-5.955-3.463-5.915-3.44M3.876 1c.303 0 .613.078.907.248l6.144 3.574 6.145 3.573c1.237.72 1.237 2.519 0 3.238l-6.145 3.574-6.144 3.573a1.827 1.827 0 0 1-.924.253 1.86 1.86 0 0 1-1.852-1.872L2 10.014 2.007 2.9c0-1.098.895-1.9 1.869-1.9z" fill="#222"/></g></g>
-    </symbol>
     <symbol viewBox="0 0 44 45" id="ico-play2">
       <path style="fill-opacity: 0.502;fill: #000000" d="M22,44c12.15,0 22,-9.85 22,-22c0,-12.15 -9.85,-22 -22,-22c-12.15,0 -22,9.85 -22,22c0,12.15 9.85,22 22,22z" />
       <path style="fill: #ffffff;stroke: #000000;stroke-opacity:0.12;stroke-width: 2" d="M16,22.01l0.01,7.15c0,1.44 1.54,2.34 2.78,1.62l6.14,-3.57l6.14,-3.57c1.24,-0.72 1.24,-2.52 0,-3.24l-6.14,-3.57l-6.14,-3.57c-1.24,-0.72 -2.78,0.21 -2.78,1.65z" />
-    </symbol>
-    <symbol viewBox="0 0 12 16" id="ico-pause">
-      <path style="fill:#222222" d="M0,0.5v15c0,0.28 0.22,0.5 0.5,0.5h1c0.28,0 0.5,-0.22 0.5,-0.5v-15c0,-0.28 -0.22,-0.5 -0.5,-0.5h-1c-0.28,0 -0.5,0.22 -0.5,0.5zM10,0.5v15c0,0.28 0.22,0.5 0.5,0.5h1c0.28,0 0.5,-0.22 0.5,-0.5v-15c0,-0.28 -0.22,-0.5 -0.5,-0.5h-1c-0.28,0 -0.5,0.22 -0.5,0.5z" />
     </symbol>
     <symbol viewBox="0 0 22 22" id="ico-close">
       <path style="fill:#222222" d="M13.75,0.93l-12.82,12.82c-0.37,0.37 -0.37,0.96 0,1.33v0c0.37,0.37 0.96,0.37 1.33,0l12.82,-12.82c0.37,-0.37 0.37,-0.96 0,-1.33v0c-0.37,-0.37 -0.96,-0.37 -1.33,0zM15.07,13.75l-12.82,-12.82c-0.37,-0.37 -0.96,-0.37 -1.33,0v0c-0.37,0.37 -0.37,0.96 0,1.33l12.82,12.82c0.37,0.37 0.96,0.37 1.33,0v0c0.37,-0.37 0.37,-0.96 0,-1.33z" />
