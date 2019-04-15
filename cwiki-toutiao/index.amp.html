@@ -46,8 +46,8 @@ body button{padding:0;border:none;background:none;outline: none;}
 .xinxi-unfold svg{display:inline-block;width:10px;height: 6px;margin-left:5px;margin-top: 5px;vertical-align:top;fill: #999;transform: rotate(180deg);}
 .xinxi.lines3 .xinxi-unfold svg{transform: rotate(0);}
 /*正文*/
-#content>div,#content>.h2_line{padding-left:17px;padding-right:17px;}
-#content .h2_line{display: block;border-top: 7px #F4F5F6 solid;padding-top:20px;margin-bottom:20px;position:relative;font-weight: 700;font-size: 21px;line-height: 21px}
+#content>div,#content>.h2_line,.h3titl{padding-left:17px;padding-right:17px;}
+#content .h2_line,.h3titl{display: block;border-top: 7px #F4F5F6 solid;padding-top:20px;margin-bottom:20px;position:relative;font-weight: 700;font-size: 21px;line-height: 21px}
 #content h3{margin:20px 0 15px 0;text-align: left;font-size: 19px;line-height: 1;}
 #content p{margin:20px 0;}
 #content>div[id]~.h2_line{margin-top: 20px;}
@@ -149,6 +149,16 @@ body button{padding:0;border:none;background:none;outline: none;}
 .btnSound.on .isound>i{-webkit-animation:specking 1.2s step-end 1;animation:specking 1.2s step-end 1;}
 @-webkit-keyframes specking{0%{transform:translateY(0);}30%{transform:translateY(-24px);}60%{transform:translateY(-48px);}100%{transform:translateY(-48px);}}
 @keyframes specking{0%{transform:translateY(0);}30%{transform:translateY(-24px);}60%{transform:translateY(-48px);}100%{transform:translateY(-48px);}}
+/*相关人物*/
+.related .conBox{padding-left:17px;padding-right: 17px;}
+.related ul{display:-webkit-box;display:flex !important;padding-bottom:20px;}
+.related ul:before,.related ul:after{content: '';display: block;width:17px;flex:auto 0 0;}
+.related li{width:calc((100vw - 111px)/4 + 14px);margin-right: 7px;flex:auto 0 0;}
+.related li a{display:inline-block;min-width:66px;max-width:100%;float:left;font-size: 14px;line-height:14px;color:#222;overflow: hidden;text-align: center;text-overflow: ellipsis;white-space: nowrap;}
+.related li amp-img{margin-bottom:10px;display: block}
+.related li img{border-radius: 50%;object-fit:cover;object-position: center top;}
+.related li a em{display: block;margin-top:10px;font-size: 12px;line-height:12px;color: #999;}
+.related li:last-child{width:auto;max-width:calc((100vw - 111px)/3 + 21px);margin-right: 0;padding-right:17px;}
     </style>
     <!--bind--><script async custom-element="amp-bind" src="https://cdn.ampproject.org/v0/amp-bind-0.1.js"></script>
     <!--目录跳转--><script async custom-element="amp-sidebar" src="https://cdn.ampproject.org/v0/amp-sidebar-0.1.js"></script>
@@ -221,9 +231,23 @@ body button{padding:0;border:none;background:none;outline: none;}
     <li><span>生肖</span><p>猴 </p></li> 
     <li><span>特长</span><p><a href="//www.baike.com/cwiki/%E9%92%A2%E7%90%B4&fr=toutiao">钢琴</a>，<a href="//www.baike.com/cwiki/%E5%B0%8F%E6%8F%90%E7%90%B4&fr=toutiao">小提琴</a>，表演，舞蹈，美声</p></li> 
    </ul>
-   <button class="xinxi-unfold" hidden [hidden]="xinxiShow == 'xinxi lines3'" on="tap:AMP.setState({xinxiShow:'xinxi lines3'})">收起<svg><use xlink:href="#ico-x3j"></use></svg></button>
+   <a href="#custom_xinxi"><button class="xinxi-unfold" hidden [hidden]="xinxiShow == 'xinxi lines3'" on="tap:AMP.setState({xinxiShow:'xinxi lines3'})">收起<svg><use xlink:href="#ico-x3j"></use></svg></button></a>
    <button class="xinxi-unfold" [hidden]="xinxiShow == 'xinxi'" on="tap:AMP.setState({xinxiShow:'xinxi'})">展开全部<svg><use xlink:href="#ico-x3j"></use></svg></button>
 </section>
+<div id="custom_related" class="related"> 
+  <h3 class="h3titl">相关人物</h3>
+  <div class="conBox">
+  <amp-carousel class="scrollable" height="130" layout="fixed-height" type="carousel">
+    <ul> 
+      <li><a href="//www.baike.com/cwiki/杨幂[明星]&amp;fr=toutiao"> <amp-img src="//a4.att.hudong.com/54/71/20300543591228149897712707733_s.jpg" width="66" height="66"></amp-img>杨幂<em>搭档</em> </a> </li> 
+      <li><a href="//www.baike.com/cwiki/张彬彬[中国大陆男演员]&amp;fr=toutiao"> <amp-img src="//a4.att.hudong.com/86/64/20300542856671149839647595620_s.jpg" width="66" height="66" ></amp-img>张彬彬<em>搭档</em> </a> </li> 
+      <li><a href="//www.baike.com/cwiki/鹿晗&amp;fr=toutiao"> <amp-img src="//a0.att.hudong.com/45/50/20300543224648149889500621376_s.jpg" width="66" height="66" ></amp-img>鹿晗<em>搭档</em> </a> </li> 
+      <li><a href="//www.baike.com/cwiki/高伟光[中国内地男演员]&amp;fr=toutiao"> <amp-img src="//a3.att.hudong.com/67/24/50200009239445155262244352147_s.jpg" width="66" height="66" ></amp-img>高伟光<em>搭档</em> </a> </li> 
+      <li><a href="//www.baike.com/cwiki/张云龙[中国内地男演员]&amp;fr=toutiao"> <amp-img src="//a4.att.hudong.com/03/37/20300543932868149802378123622_s.jpg" width="66" height="66" ></amp-img>张云龙<em>搭档</em> </a> </li> 
+    </ul> 
+  </amp-carousel>
+</div>
+</div>
 <article id="content">
    <span class="h2_line" id="1">早年经历 </span> 
    <div id="2"> 
@@ -285,7 +309,7 @@ body button{padding:0;border:none;background:none;outline: none;}
     <amp-state id="scrollTable_1Height"><script type="application/json">184</script></amp-state>
     <amp-state id="scrollTable_1Row"><script type="application/json">19</script></amp-state>
     <amp-carousel class="scrollable" height="184" [height]="scrollTable_1Height" layout="fixed-height" type="carousel">
-<table class="table"> 
+<table class="table" id="scrollTable_1"> 
 <thead> 
  <tr> 
   <th>首播时间</th> 
@@ -426,12 +450,13 @@ body button{padding:0;border:none;background:none;outline: none;}
 </table>
 </amp-carousel>
 <button class="btn_allTD2 gray7" [hidden]="scrollTable_1Height!=184" on="tap:AMP.setState({ scrollTable_1Height:scrollTable_1Row * 46})">加载全部 <svg><use xlink:href="#ico-x3j"></use></svg></button>
-<button class="btn_allTD2 on gray7" hidden [hidden]="scrollTable_1Height==184" on="tap:AMP.setState({ scrollTable_1Height: 184 })">返回 <svg><use xlink:href="#ico-x3j"></use></svg></button>
+<a href="#scrollTable_1"><button class="btn_allTD2 on gray7" hidden [hidden]="scrollTable_1Height==184" on="tap:AMP.setState({ scrollTable_1Height: 184 })">返回 <svg><use xlink:href="#ico-x3j"></use></svg></button></a>
 
     <a name="9" id="9"></a><h3>参演电影  </h3> 
     <amp-state id="scrollTable_2"><script type="application/json">"scroller"</script></amp-state>
+    <amp-state id="scrollTable_2Row"><script type="application/json">6</script></amp-state>
     <div class="scrollable clearfix"><div class="scroller" [class]="scrollTable_2">
-<table class="table"> 
+<table class="table" id="scrollTable_2"> 
 <thead> 
  <tr> 
   <th>时间</th> 
@@ -481,7 +506,7 @@ body button{padding:0;border:none;background:none;outline: none;}
 </table>
 </div></div> 
 <button class="btn_allTD2 gray7" [hidden]="scrollTable_2 == 'scroller on'" on="tap:AMP.setState({ scrollTable_2: 'scroller on' })">加载全部 <svg><use xlink:href="#ico-x3j"></use></svg></button>
-<button class="btn_allTD2 on gray7" hidden [hidden]="scrollTable_2 == 'scroller'" on="tap:AMP.setState({ scrollTable_2: 'scroller' })">返回 <svg><use xlink:href="#ico-x3j"></use></svg></button>
+<a href="#scrollTable_2" hidden [hidden]="scrollTable_2 == 'scroller'"><button class="btn_allTD2 on gray7" on="tap:AMP.setState({ scrollTable_2: 'scroller' })">返回 <svg><use xlink:href="#ico-x3j"></use></svg></button></a>
     <a name="11" id="11"></a><h3>网络剧</h3> 
     <div class="scrollable clearfix" id="scrollTable_3"><div class="scroller">
 <table class="table"> 
