@@ -23,7 +23,6 @@ body{margin:0;padding:0;font-size:15px;line-height:22px;}
 </style>
 </head>
 <body>
-<input type="hidden" value="" id="ttsCount">
 <span id="btn-sound" class="btnSound" 
   soundurl=""
 ></span>
@@ -79,7 +78,11 @@ function recordLog(watchflag) {
 var nowAudio;
 
 var nextUrl = function(url){
-	var count = Number($("#ttsCount").val());
+  var summary = getUrlKey('text')
+  var count = Math.floor(summary.length/50);
+  if(summary.length%50>0){
+    count +=1;
+  }
 	var as=url;
 	var as1 = url.split(".mp3");
       if(as1.length>1){
@@ -137,7 +140,6 @@ function getUrlKey(name){
     if (result == location.hash||result == null) result = ''
     return result;
 }
-  $("#ttsCount").attr({value:getUrlKey('count')}) 
   $("#btn-sound").attr({soundurl:getUrlKey('url')})
 	const btnSound = document.getElementById("btn-sound")
 	const popSound = document.getElementById("handDiv")
