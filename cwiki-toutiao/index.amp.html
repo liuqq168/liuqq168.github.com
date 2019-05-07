@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <title>迪丽热巴-互动百科</title>
-    <link rel="canonical" href="/cwiki-toutiao/index.html">
+    <link rel="canonical" href="https://www.baike.com/cwiki/迪丽热巴&fr=toutiao">
     <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1,viewport-fit=cover">
     <style amp-custom>
 html,body,div,ul,li,h1,h2,h3,h4,p,input,form{margin:0;padding:0;list-style:none;border:0;outline:none;vertical-align:baseline;word-wrap:break-word;word-break:break-all;}
@@ -24,9 +24,13 @@ table{border-collapse:collapse;border-spacing:0;empty-cells:show;}
 .h2{font-weight:bold;}
 body button{padding:0;border:none;background:none;outline: none;}
 /*摘要*/
-.zyimg{margin:0;}
-.zyimg img{object-fit: contain;}
+.zyimg{margin:0;position:relative;overflow:hidden;}
+.zyimg.center{max-width:100%;min-height:56.27vw;display:-webkit-box;-webkit-box-pack:center;-webkit-box-align:center;display:flex;justify-content:center;align-items:center;}
+.zyimg.cut img{object-fit: cover;}
+.zyimg img{object-fit:contain;}
 .zyimg figcaption{display: none;}
+.zyimg amp-img{position: relative;z-index: 2;}
+.zyimg .bg{display:block;position: absolute;left:-5%;top:-5%;z-index: 0;width:110%;height: 110%;-webkit-filter: blur(25px);filter: blur(25px);background-repeat: no-repeat;background-position: 0 center;background-size:100% auto;}
 .baiketitl{margin:0 17px;padding-top:17px;}
 .baiketitl h1{font-size:24px;line-height:1.2;margin-right: 30px;}
 .zy{margin: 20px 17px 0 17px;}
@@ -43,8 +47,8 @@ body button{padding:0;border:none;background:none;outline: none;}
 .xinxi ul:nth-child(1n+3){padding-top:10px;margin-top:10px;border-top:1px solid #E8E8E8;}
 .more-loding{background: #E0E0E0;line-height: 24px;height: 24px;font-size: 14px;color:#999;text-align: center;margin:15px 0;}
 .xinxi-unfold{text-align: center;padding:15px 0 20px 0;font-size: 14px;color:#999;line-height: 1;width:calc(100vw - 34px)}
-.xinxi-unfold svg{display:inline-block;width:10px;height: 6px;margin-left:5px;margin-top: 5px;vertical-align:top;fill: #999;transform: rotate(180deg);}
-.xinxi.lines3 .xinxi-unfold svg{transform: rotate(0);}
+.xinxi-unfold svg{display:inline-block;width:10px;height: 6px;margin-left:5px;margin-top: 5px;vertical-align:top;fill: #999;-webkit-transform: rotate(180deg);transform: rotate(180deg);}
+.xinxi.lines3 .xinxi-unfold svg{-webkit-transform: rotate(0);transform: rotate(0);}
 /*正文*/
 #content>div,#content>.h2_line,.h3titl{padding-left:17px;padding-right:17px;}
 #content .h2_line,.h3titl{display: block;border-top: 7px #F4F5F6 solid;padding-top:20px;margin-bottom:20px;position:relative;font-weight: 700;font-size: 21px;line-height: 21px}
@@ -57,7 +61,7 @@ body button{padding:0;border:none;background:none;outline: none;}
 #content .img img{border-radius: 3px;object-fit: contain;}
 #content .img figcaption{display:block;padding-top:8px;text-align: center;font-size:14px;font-weight:normal;line-height: 1.2;color:#999;}
 #content table{text-align: left;table-layout: fixed;min-width:100%;width:auto;}
-#content table th{background:#fafafa;padding:11px 14px 11px 0;font-weight: normal;color:#999;font-size: 16px;line-height: 24px;word-break:break-all;word-wrap:break-word;}
+#content table th{background:#fafafa;padding:11px 14px 11px 0;vertical-align:top;font-weight: normal;color:#999;font-size: 16px;line-height: 24px;word-break:break-all;word-wrap:break-word;}
 #content table td{vertical-align:top;text-align: left;padding:11px 14px 11px 0;font-size: 16px;line-height:24px;word-break:break-all;word-wrap:break-word;}
 #content th,   
 #content tr:first-child>td{min-width:calc((100vw - 111px)/4 + 7px);}
@@ -94,16 +98,19 @@ body button{padding:0;border:none;background:none;outline: none;}
 .foot p>a{color:#505050;}
 .foot:after{content: '';display: block;height:1px;margin-top:30px;overflow:hidden;background-color:#e8e8e8;}
 /*--to download--*/
-.link-app{height: 56px;font-weight: normal;}
-.link-app:before {content: '';display: block;height: 8px;}
+.link-app{height: 43px;font-weight: normal;}
+.link-app:before{content:'';display: block;height: 7px;}
 .link-app a{display: block;}
-.link-app .baike-ico{margin:0 8px 0 17px;float:left;display: block;}
-.link-app strong{display: block;font-size:16px;line-height:1;padding-top:3px;font-weight: normal;color: #222}
-.link-app p{font-size: 12px;color: #999;line-height: 1;margin-top:6px;}
-.link-app .btn{display:block;padding:0 17px;margin:8px 17px 0 0;line-height: 1;border-radius: 5px;float: right;color:#222;font-size: 12px;line-height: 28px;border:#505050 solid 1px;border-radius: 4px;}
+.link-app .baike-ico{margin:0 7px 0 17px;float:left;display: block;}
+.link-app strong{display: inline-block;margin-right:3px;vertical-align:top;margin-top:7px;font-size:16px;line-height:1;font-weight: normal;color: #222}
+.link-app p{display: inline-block;vertical-align:top;margin-top:9px;font-size: 12px;color: #999;line-height: 1;}
 .hd_ad_app.link-app{height:auto;background-color: #F4F5F6;padding-bottom:env(safe-area-inset-bottom);}
-.hd_ad_app.link-app:before{content:'';display: block;height: 30px;}
+.hd_ad_app.link-app:before{height: 30px;}
+.hd_ad_app.link-app .baike-ico{width:40px;height:40px;}
+.hd_ad_app.link-app strong{display: block;margin-top:3px;}
+.hd_ad_app.link-app p{display: block;margin-top:6px;}
 .hd_ad_app.link-app:after{content:'';display: block;height: 94px;}
+.link-app .btn{display:block;padding:0 17px;margin:8px 17px 0 0;line-height: 1;border-radius: 5px;float: right;color:#222;font-size: 12px;line-height: 28px;border:#505050 solid 1px;border-radius: 4px;}
 /*目录*/
 .word_menu{background:#fff;min-width: 65vw;}
 .word_menu li{font-size: 16px;position: relative;padding-left:30px;}
@@ -111,13 +118,13 @@ body button{padding:0;border:none;background:none;outline: none;}
 .word_menu li.lv2 a{color:#505050;font-weight: normal;}
 .word_menu li.current{background-color:#F4F5F6}
 /*右下悬浮*/
-.fixed-bot{position:fixed;bottom:0;right:0;left:0;z-index:4;-webkit-transition: transform 200ms linear;transition: transform 200ms linear;transform: translateY(100%);}
+.fixed-bot{position:fixed;bottom:0;right:0;left:0;z-index:4;-webkit-transition: transform 200ms linear;transition: transform 200ms linear;-webkit-transform: translateY(100%);transform: translateY(100%);}
 .fixed-bot .btn_menu{display:block;width:40px;height:40px;padding:0;position:absolute;bottom:65px;margin-bottom:env(safe-area-inset-bottom);right:17px;background-color: #fff;border-radius: 50%;font-size:14px;line-height: 40px;font-weight: bold;text-align: center;border: 1px solid #DCDCDC;box-shadow: 0 4px 8px 0 rgba(0,0,0,0.20);}
 .fixed-bot .pop-speech{padding-bottom:env(safe-area-inset-bottom);}
 .fixed-bot.on{-webkit-transform: translateY(0);transform: translateY(0);}
 /*多义项*/
 .polysemy{font-size:14px;line-height: 1.2;padding-top:17px;}
-.polysemy h6{display: inline-block;margin:0 0 0 17px;max-width:calc(100vw - 125px);color:#505050;font-weight: normal;font-size: 1em;}
+.polysemy h6{display: inline-block;margin:0 0 0 17px;max-width:calc(100vw - 125px);color:#505050;font-weight: normal;font-size: 1em;vertical-align:top;}
 .polysemy h6:before{content: '多义词-';display: inline-block;vertical-align:top;padding:1px 2px;}
 .btn-xpf{display: inline-block;}
 .polysemy .btn-xpf{margin:0 17px 0 10px;font-size: 1em;}
@@ -158,6 +165,7 @@ body button{padding:0;border:none;background:none;outline: none;}
 .related li img{border-radius: 50%;object-fit:cover;object-position: center top;}
 .related li a em{display: block;margin-top:10px;font-size: 12px;line-height:12px;color: #999;}
 .related li:last-child{width:auto;max-width:calc((100vw - 111px)/3 + 21px);margin-right: 0;padding-right:17px;}
+/*同义词*/.synonym{background: #FAFAFA;line-height: 1.5;padding:10px 17px;font-size: 16px;}
     </style>
     <!--bind--><script async custom-element="amp-bind" src="https://cdn.ampproject.org/v0/amp-bind-0.1.js"></script>
     <!--目录跳转--><script async custom-element="amp-sidebar" src="https://cdn.ampproject.org/v0/amp-sidebar-0.1.js"></script>
@@ -169,12 +177,19 @@ body button{padding:0;border:none;background:none;outline: none;}
   </head>
   <body>
 <div class="link-app"> 
-  <amp-img width="40" height="40" class="baike-ico" src="//www.huimg.cn/public/images/baike-ico72x72.png"></amp-img>
+  <amp-img width="30" height="30" class="baike-ico" src="//www.huimg.cn/public/images/baike-ico72x72.png"></amp-img>
   <strong>互动百科</strong> 
   <p>想你所想知你所知</p> 
 </div>
+<div class="synonym gray9"> 
+  <p class="f14">“ <a class="a_del">商城高中</a>”是“ <a class="a_del">河南省商城高级中学</a>”的同义词。 </p> 
+</div>
 <header class="word-top"> 
-  <figure class="zyimg"><amp-img lightbox="caption" src="//a4.att.hudong.com/04/09/20300543525109150900091910824_0401_480_600.jpg" layout="responsive" width="375" height="233"></amp-img><figcaption>摘要图</figcaption></figure>
+  <figure class="zyimg cut">
+    <em class="bg" style="background-image:url('//a0.att.hudong.com/24/93/20300545093656155546933587217_w.jpg')"></em>
+    <amp-img lightbox="caption" src="//a0.att.hudong.com/24/93/20300545093656155546933587217_w.jpg" layout="responsive" width="100" height="66"></amp-img>
+    <figcaption>摘要图</figcaption>
+  </figure>
   <button class="btnSound" [class]="audioPlay.btnClass" on="tap:AMP.setState({audioPlay:{
     'show':'fixed-bot on','btnClass':'btnSound on',
     'page':'iframe.audio.html?url=//a8.baike.com/9A/83/9A83E575336A53F9AFB0E03A42C62F40/BAECDF05E36C66FFFEBF5AAAA9497B48.mp3&text=迪丽热巴，中国内地女演员，1992年06月03日出生于新疆乌鲁木齐，毕业于上海戏剧学院。2010年参加由陆川导演的电影《王的盛宴》虞姬角色上海站海选进入娱乐圈；2015年3月在热拍电视剧《六扇门》中出演女一号苏溢清。2015年8月主演青春励志电视剧《麻辣变形计》；11月主演都市爱情电影《傲娇与偏见》。12月参演电影《怦然星动》上映。2016年1月出演古装言情电视剧《三生三世十里桃花》；9月，参演《漂亮的李慧珍》。2月，加盟浙江卫视《奔跑吧兄弟》第五季《奔跑吧》担任MC。2018年10月11日，第12届金鹰节开幕式晚会官方宣布第12届金鹰节金鹰女神为迪丽热巴。10月14日，凭借《漂亮的李慧珍》获得第12届中国金鹰电视艺术节观众喜爱的女演员奖、最具人气女演员奖。12月28日，获第五届“中国电视好演员”表彰盛典优秀演员奖。2019年2月4日，参加2019中央电视台春节联欢晚会，演唱歌曲《中国喜事》。3月2日，加盟综艺节目《创造营2019》担任男团发起人。'

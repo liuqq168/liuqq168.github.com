@@ -43,11 +43,11 @@ a{-webkit-tap-highlight-color: transparent;}
 .eventList p{overflow:hidden;color:#333;font-size:16px;line-height:24px;text-overflow: ellipsis;display: -webkit-box;-webkit-line-clamp: 2;-webkit-box-orient: vertical;}
 .vscroll li .tagItem{padding:15px 10px;position:absolute;right:0px;bottom:0px;left:0;line-height: 1;font-size:14px;color:#999;background-color: #f4f5f6;border-radius: 0 0 4px 4px}
 .vscroll li .tagItem:before{content: '展开';}
-.vscroll li .ico-arrow{width:13px;height:13px;float:right;}
+.vscroll li .ico-arrow{width:10.56px;height:10.56px;float:right;margin-top:2px;}
 .vscroll .active .eventHead{height:114px;border-radius:4px 4px 0px 0px;}
 .vscroll .active .eventHead .benceng{height:60px;}
 .vscroll .active .tagItem:before{content: '收起';}
-.vscroll .active .ico-arrow{-ms-transform:rotate(180deg);transform:rotate(180deg);-webkit-transform: rotate(180deg);}
+.vscroll .active .ico-arrow{-webkit-transform: rotate(180deg);transform:rotate(180deg);}
 .vscroll div[id].active:after{top:121px;}
 /*弹窗*/
 .pop-follow{position: fixed;left:7px;right:7px;top:100px;z-index: 11}
