@@ -60,21 +60,12 @@ body{margin:0;padding:0;font-size:15px;line-height:22px;}
       <path style="fill:#222222" d="M0,0.5v15c0,0.28 0.22,0.5 0.5,0.5h1c0.28,0 0.5,-0.22 0.5,-0.5v-15c0,-0.28 -0.22,-0.5 -0.5,-0.5h-1c-0.28,0 -0.5,0.22 -0.5,0.5zM10,0.5v15c0,0.28 0.22,0.5 0.5,0.5h1c0.28,0 0.5,-0.22 0.5,-0.5v-15c0,-0.28 -0.22,-0.5 -0.5,-0.5h-1c-0.28,0 -0.5,0.22 -0.5,0.5z" />
     </symbol>
 </svg>
-<script src="jquery-2.0.3.min.js"></script> 
+<script src="//www.huimg.cn/libs/jquery/2.1.4/jquery-2.1.4.min.js"></script> 
 <script>
 String.prototype.Trim = function() {
 	return this.replace(/^\s*|\s*$/g, "");
 }
 
-function recordLog(watchflag) {
-	try {
-		$.getScript("http://stat.baike.com/js/webstat_manage.js", function() {
-			StatVirtualTraffic(document.referrer, window.location,
-					"stat_hdstat_onclick_" + watchflag);
-		});
-	} catch (e) {
-	}
-}
 var nowAudio;
 
 var nextUrl = function(url){

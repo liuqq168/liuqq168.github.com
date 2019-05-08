@@ -27,6 +27,8 @@ body button{padding:0;border:none;background:none;outline: none;}
 .zyimg{margin:0;position:relative;overflow:hidden;}
 .zyimg.center{max-width:100%;min-height:56.27vw;display:-webkit-box;-webkit-box-pack:center;-webkit-box-align:center;display:flex;justify-content:center;align-items:center;}
 .zyimg.cut img{object-fit: cover;}
+.zyimg.cut2{display:-webkit-box;-webkit-box-pack:center;-webkit-box-align:center;display:flex;justify-content:center;align-items:center;}
+.zyimg.cut2 img{object-fit:cover;object-position:top;}
 .zyimg img{object-fit:contain;}
 .zyimg figcaption{display: none;}
 .zyimg amp-img{position: relative;z-index: 2;}
@@ -184,12 +186,31 @@ body button{padding:0;border:none;background:none;outline: none;}
 <div class="synonym gray9"> 
   <p class="f14">“ <a class="a_del">商城高中</a>”是“ <a class="a_del">河南省商城高级中学</a>”的同义词。 </p> 
 </div>
-<header class="word-top"> 
+<header class="word-top">
+  <!--宽高尺寸小于300x198（需设置图片宽高数值）
+  <figure class="zyimg center">
+    <em class="bg" style="background-image:url('//a1.att.hudong.com/33/86/50200014992522154426860542085_w.jpg')"></em>
+    <amp-img lightbox="caption" src="//a1.att.hudong.com/33/86/50200014992522154426860542085_w.jpg" width="268" height="175"></amp-img>
+    <figcaption>摘要图</figcaption>
+  </figure>-->
+  <!--宽高比小于0.8（仅修改图片路径）-->
   <figure class="zyimg cut">
     <em class="bg" style="background-image:url('//a0.att.hudong.com/24/93/20300545093656155546933587217_w.jpg')"></em>
     <amp-img lightbox="caption" src="//a0.att.hudong.com/24/93/20300545093656155546933587217_w.jpg" layout="responsive" width="100" height="66"></amp-img>
     <figcaption>摘要图</figcaption>
   </figure>
+  <!--宽高比0.8~1（仅修改图片路径）
+  <figure class="zyimg">
+    <em class="bg" style="background-image:url('//a1.att.hudong.com/70/29/01300542281368141301295593358_w.jpg')"></em>
+    <amp-img lightbox="caption" src="//a1.att.hudong.com/70/29/01300542281368141301295593358_w.jpg" layout="responsive" width="100" height="66"></amp-img>
+    <figcaption>摘要图</figcaption>
+  </figure>-->
+  <!--宽高比大于1（仅修改图片路径）
+  <figure class="zyimg cut2">
+    <em class="bg" style="background-image:url('//a0.att.hudong.com/12/67/50200009239445155366674601000_w.jpg')"></em>
+    <amp-img lightbox="caption" src="//a0.att.hudong.com/12/67/50200009239445155366674601000_w.jpg" width="60vw" height="78vw"></amp-img>
+    <figcaption>摘要图</figcaption>
+  </figure>-->
   <button class="btnSound" [class]="audioPlay.btnClass" on="tap:AMP.setState({audioPlay:{
     'show':'fixed-bot on','btnClass':'btnSound on',
     'page':'iframe.audio.html?url=//a8.baike.com/9A/83/9A83E575336A53F9AFB0E03A42C62F40/BAECDF05E36C66FFFEBF5AAAA9497B48.mp3&text=迪丽热巴，中国内地女演员，1992年06月03日出生于新疆乌鲁木齐，毕业于上海戏剧学院。2010年参加由陆川导演的电影《王的盛宴》虞姬角色上海站海选进入娱乐圈；2015年3月在热拍电视剧《六扇门》中出演女一号苏溢清。2015年8月主演青春励志电视剧《麻辣变形计》；11月主演都市爱情电影《傲娇与偏见》。12月参演电影《怦然星动》上映。2016年1月出演古装言情电视剧《三生三世十里桃花》；9月，参演《漂亮的李慧珍》。2月，加盟浙江卫视《奔跑吧兄弟》第五季《奔跑吧》担任MC。2018年10月11日，第12届金鹰节开幕式晚会官方宣布第12届金鹰节金鹰女神为迪丽热巴。10月14日，凭借《漂亮的李慧珍》获得第12届中国金鹰电视艺术节观众喜爱的女演员奖、最具人气女演员奖。12月28日，获第五届“中国电视好演员”表彰盛典优秀演员奖。2019年2月4日，参加2019中央电视台春节联欢晚会，演唱歌曲《中国喜事》。3月2日，加盟综艺节目《创造营2019》担任男团发起人。'
