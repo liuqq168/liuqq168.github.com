@@ -213,7 +213,7 @@ body button{padding:0;border:none;background:none;outline: none;}
   </figure>-->
   <button class="btnSound" [class]="audioPlay.btnClass" on="tap:AMP.setState({audioPlay:{
     'show':'fixed-bot on','btnClass':'btnSound on',
-    'page':'iframe.audio.html?url=//a8.baike.com/9A/83/9A83E575336A53F9AFB0E03A42C62F40/BAECDF05E36C66FFFEBF5AAAA9497B48.mp3&text=迪丽热巴，中国内地女演员，1992年06月03日出生于新疆乌鲁木齐，毕业于上海戏剧学院。2010年参加由陆川导演的电影《王的盛宴》虞姬角色上海站海选进入娱乐圈；2015年3月在热拍电视剧《六扇门》中出演女一号苏溢清。2015年8月主演青春励志电视剧《麻辣变形计》；11月主演都市爱情电影《傲娇与偏见》。12月参演电影《怦然星动》上映。2016年1月出演古装言情电视剧《三生三世十里桃花》；9月，参演《漂亮的李慧珍》。2月，加盟浙江卫视《奔跑吧兄弟》第五季《奔跑吧》担任MC。2018年10月11日，第12届金鹰节开幕式晚会官方宣布第12届金鹰节金鹰女神为迪丽热巴。10月14日，凭借《漂亮的李慧珍》获得第12届中国金鹰电视艺术节观众喜爱的女演员奖、最具人气女演员奖。12月28日，获第五届“中国电视好演员”表彰盛典优秀演员奖。2019年2月4日，参加2019中央电视台春节联欢晚会，演唱歌曲《中国喜事》。3月2日，加盟综艺节目《创造营2019》担任男团发起人。'
+    'page':'//www.huimg.cn/wap/js/soundManageForAMP.html?url=//a8.baike.com/9A/83/9A83E575336A53F9AFB0E03A42C62F40/BAECDF05E36C66FFFEBF5AAAA9497B48.mp3&text=迪丽热巴，中国内地女演员，1992年06月03日出生于新疆乌鲁木齐，毕业于上海戏剧学院。2010年参加由陆川导演的电影《王的盛宴》虞姬角色上海站海选进入娱乐圈；2015年3月在热拍电视剧《六扇门》中出演女一号苏溢清。2015年8月主演青春励志电视剧《麻辣变形计》；11月主演都市爱情电影《傲娇与偏见》。12月参演电影《怦然星动》上映。2016年1月出演古装言情电视剧《三生三世十里桃花》；9月，参演《漂亮的李慧珍》。2月，加盟浙江卫视《奔跑吧兄弟》第五季《奔跑吧》担任MC。2018年10月11日，第12届金鹰节开幕式晚会官方宣布第12届金鹰节金鹰女神为迪丽热巴。10月14日，凭借《漂亮的李慧珍》获得第12届中国金鹰电视艺术节观众喜爱的女演员奖、最具人气女演员奖。12月28日，获第五届“中国电视好演员”表彰盛典优秀演员奖。2019年2月4日，参加2019中央电视台春节联欢晚会，演唱歌曲《中国喜事》。3月2日，加盟综艺节目《创造营2019》担任男团发起人。'
   }})">
     <span class="isound"><i>
    <svg><use xlink:href="#ico-sound" /></svg><svg><use xlink:href="#ico-sound-mov2" /></svg><svg><use xlink:href="#ico-sound-mov3" />
@@ -1010,7 +1010,6 @@ body button{padding:0;border:none;background:none;outline: none;}
    </ul> 
   </div> 
 </amp-sidebar>
-  <!-- <button on="tap:sidebar.toggle">Toggle sidebar</button> -->
 <amp-state id="audioPlay"><script type="application/json">{
   "show":"fixed-bot","btnClass":"btnSound",
   "page":"iframe.test.html"
@@ -1024,13 +1023,13 @@ body button{padding:0;border:none;background:none;outline: none;}
         layout="responsive"
         sandbox="allow-scripts allow-popups"
         frameborder="0"
-        src="iframe.test.html"
+        src="//www.huimg.cn/wap/js/soundManageForAMP.html"
         [src]="audioPlay.page">
       </amp-iframe>
     </div>
     <button class="iclose" on="tap:AMP.setState({audioPlay:{
       'show':'fixed-bot','btnClass':'btnSound',
-      'page':'iframe.test.html'
+      'page':'//www.huimg.cn/wap/js/soundManageForAMP.html'
     }})"><svg><use xlink:href="#ico-close" /></svg></button>
   </div>
 </div>
