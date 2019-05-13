@@ -118,7 +118,7 @@ var is_zhongsou = false;
 var is_maimai = false;
 $(document).ready(function () {
 
-	document.domain = 'liuqq168.github.io';
+	document.domain = 'localhost';
 
 	//热点参考 显示更多点击事件
 	$("#showMoreBaikeArchives").click(function(){
@@ -762,7 +762,9 @@ $(document).ready(function () {
 		if(judgeByReq("prd=citiao_maimai")){
 			is_maimai = true;
 		}
-
+		if(judgeByReq("fr=toutiao")){
+			console.log("bytedance://disable_swipe")	//临时解决：禁用右滑退出
+		}
 		isFromYisou = isFromYisou || referReg2.test(refer)||referReg3.test(refer)||is_yidianzixun||is_zhwnl||is_shunli||is_yunzhisheng||is_xunfei||is_haokan||is_huangli||is_zhongsou||is_maimai;
 		if(typeof EsLoad =="function"){
 			isEsLoad = true;
