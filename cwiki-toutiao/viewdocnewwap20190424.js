@@ -654,12 +654,12 @@ $(document).ready(function () {
 		function findInsert(node,str) {
 		  if($(node).nextAll().length === 0 || $(node).next().length == 0){
 		    findInsert($(node).parent(),str)
-		  }else if(node[0].nodeName == "P" || node[0].nodeName == "DIV"){
+		  }else if($(node)[0].nodeName == "P" ||$(node)[0].nodeName == "DIV"){
 		    node.after(str);return
-		  }else if(node.next()[0].nodeName === "BR"){
+		  }else if($(node).next()[0].nodeName === "BR"){
 		    node.next().after(str);return
-		  }else if(node.next().length > 0){
-		    findInsert(node.next(),str)
+		  }else if($(node).next().length > 0){
+		    findInsert($(node).next(),str)
 		  }else{
 		    return
 		  }
