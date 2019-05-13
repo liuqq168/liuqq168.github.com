@@ -40,6 +40,7 @@ header{overflow:hidden;}
 .zy-video .ico-play{width:44px;height: 44px;float:left;margin-right:10px;}
 .zy-video strong{display: block;font-size: 16px;font-weight: normal;line-height: 1;margin-bottom: 10px;}
 .zy-video p{font-size: 12px;line-height: 1;}
+.zy-video p span{display: inline-block;margin-right: 11px;}
 /**主区块区**/
 .module{background-color:#FFF;overflow:hidden;}
   /*contant*/
