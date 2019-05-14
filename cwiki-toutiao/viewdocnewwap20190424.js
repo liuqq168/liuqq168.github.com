@@ -21,6 +21,12 @@ function rela_loaded () {
 		momentum: true,
 		eventPassthrough:true
 	});
+	navScroll.on('beforeScrollStart',function(){
+		console.log('bytedance://disable_swipe')
+	});
+	navScroll.on("scrollEnd",function(){
+		console.log('bytedance://enable_swipe')
+	})
 }
 
 //相关人物栏目增加左右滑动属性样式
@@ -761,9 +767,6 @@ $(document).ready(function () {
 		}
 		if(judgeByReq("prd=citiao_maimai")){
 			is_maimai = true;
-		}
-		if(judgeByReq("fr=toutiao")){
-			console.log("bytedance://disable_swipe")	//临时解决：禁用右滑退出
 		}
 		isFromYisou = isFromYisou || referReg2.test(refer)||referReg3.test(refer)||is_yidianzixun||is_zhwnl||is_shunli||is_yunzhisheng||is_xunfei||is_haokan||is_huangli||is_zhongsou||is_maimai;
 		if(typeof EsLoad =="function"){
