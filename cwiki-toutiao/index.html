@@ -62,19 +62,6 @@
       </div>
       <div class="prism-player" data-url="//s3.pstatp.com/cdn/expire-1-M/byted-player-videos/1.0.3/xgplayer-demo.mp4" id="prism-player"></div>
     </div>
-<!--<script>
-var videoData = {
-    "data": [
-        {
-            "title": "哈尔滨国际版宣传片发布，瞬间高大上了",
-            "url": "http://v6-default.ixigua.com/b6d96078e80873d8c29b3a956949b8c2/5cd91bf5/video/m/220bfb902be510a4b2ba60e569365751ff211512733000080b51e29e23c/?rc=aTM1Ozo3N2k6O2Q6NzlmaUApQHRAbztEOjc0NTM4MzM4NDQ0MzQ1b0BoNHYpQGczdylAZjN1KXNiamt1aDFkd3JAKUAwYDE1Ly4zXzIxMGBjX2Fjcy1vI28jMi0tMy0wLy4uNDAxMDI2LTojbyM6YS1vIzpgLXAjOmBmXmwrYF5wbGZycWAtXg==",
-            "duration": 704.4,
-            "poster_url": "http://p3.pstatp.com/origin/392f0004364baf03c17a"
-        }
-    ],
-    "message": "ok"
-}
-</script>-->
        <span id="btn-sound" class="btnSound" uuid="9A83E575336A53F9AFB0E03A42C62F40" soundurl="//a8.baike.com/9A/83/9A83E575336A53F9AFB0E03A42C62F40/BAECDF05E36C66FFFEBF5AAAA9497B48.mp3?title=迪丽热巴">
         <span class="isound"><i>
        <svg><use xlink:href="#ico-sound" /></svg><svg><use xlink:href="#ico-sound-mov2" /></svg><svg><use xlink:href="#ico-sound-mov3" />
@@ -1103,17 +1090,18 @@ function EsLoad() {
 <script type="text/javascript" src="//www.huimg.cn/stat/js/hd_product_monitor.js?f=59805895e6563e165c069971"></script> 
 <script type="text/javascript" src="//stat.baike.com/js/webstat_manage.js"></script> 
 <script type="text/javascript" src="//stat.baike.com/js/webstat_manage_hdga.js"></script> 
-<script type="text/javascript" src="interface-20190406.js"></script> 
+<script type="text/javascript" src="//www.huimg.cn/wap/js/interface-20190406.js"></script> 
 <script type="text/javascript" src="viewdocnewwap20190424.js"></script> 
 <script type="text/javascript" src="//www.huimg.cn/wap/js/viewdocnewwapnormal20171025.js"></script> 
 <script type="text/javascript" src="//www.huimg.cn/wap/js/jquery.scroll.js"></script> 
 <script type="text/javascript" src="//www.huimg.cn/wap/js/soundManage-20190424.js"></script> 
 <script src="//www.huimg.cn/wap/moji/svgicon-for-toutiao190424.js"></script> 
 <script src="//www.huimg.cn/wap/js/iscroll.js"></script>
-<script src="//cdn.jsdelivr.net/npm/xgplayer@1.1.4/browser/index.js" charset="utf-8"></script>
+<script src="http://cdn.jsdelivr.net/npm/xgplayer@1.1.5-beta.13/browser/index.js" charset="utf-8"></script>
+<script src="http://s0.pstatp.com/cdn/expire-1-M/byted-player-ttnative/0.0.1/index.js" charset="utf-8"></script>
 <script type="text/javascript">
 var videourl = $("#prism-player").attr("data-url")
-const prismplayer = new Player({
+const prismplayer = new window.Player({
   id: 'prism-player',
   url: videourl,
   ignores: ['volume', 'time'],
@@ -1121,6 +1109,14 @@ const prismplayer = new Player({
   playsinline: true,
   width: '100%',
   height: '100%',
+  inactive: 5000,
+  closeVideoTouch: true,
+  playBtn: {
+    constPath: '',
+    playPath: 'M576,363L810,512L576,661zM342,214L576,363L576,661L342,810z',
+    pausePath: 'M598,214h170v596h-170v-596zM256 810v-596h170v596h-170z',
+    scale: 0.04
+  }
 })
 $("#prism-player").hide()
 prismplayer.on('ended',function(){
