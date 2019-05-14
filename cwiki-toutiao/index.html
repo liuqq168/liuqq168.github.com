@@ -1128,6 +1128,11 @@ $(".zy-wrap").fadeOut(1000);
 $("#prism-player").show()
 prismplayer.play();
 }); 
+prismplayer.on('exitFullscreen', function() {
+  setTimeout(function(){
+    prismplayer.play()
+  }, 500)
+})
 </script>
 
 
