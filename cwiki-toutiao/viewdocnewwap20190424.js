@@ -768,6 +768,10 @@ $(document).ready(function () {
 		if(judgeByReq("prd=citiao_maimai")){
 			is_maimai = true;
 		}
+		if(judgeByReq("fr=wangyi")){
+				$(".hd_ad_app.link-app").hide();
+				$(".foot").append("<p style='text-align: center; border-top: #e8e8e8 solid 1px; padding-top: 10px; padding-bottom: 20px;'>页面信息来源于互动百科</p>");
+		}
 		isFromYisou = isFromYisou || referReg2.test(refer)||referReg3.test(refer)||is_yidianzixun||is_zhwnl||is_shunli||is_yunzhisheng||is_xunfei||is_haokan||is_huangli||is_zhongsou||is_maimai;
 		if(typeof EsLoad =="function"){
 			isEsLoad = true;
@@ -1279,6 +1283,7 @@ $(function(){
 		$(window).bind("touchend",function(e){
 			//console.log('baike log - touch end')
 			console.info('baike log - touch end')
+			console.log('bytedance://enable_swipe')
 			//$('#btn-catalogue').show();
 			if(hasGuanMingAd){
 				$("#btn_guanming").show();
