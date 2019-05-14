@@ -1110,27 +1110,17 @@ function EsLoad() {
 <script type="text/javascript" src="//www.huimg.cn/wap/js/soundManage-20190424.js"></script> 
 <script src="//www.huimg.cn/wap/moji/svgicon-for-toutiao190424.js"></script> 
 <script src="//www.huimg.cn/wap/js/iscroll.js"></script>
-<script src="//cdn.jsdelivr.net/npm/xgplayer@1.1.5-beta.13/browser/index.js" charset="utf-8"></script>
-<script src="//s0.pstatp.com/cdn/expire-1-M/byted-player-ttnative/0.0.1/index.js" charset="utf-8"></script>
+<script src="//cdn.jsdelivr.net/npm/xgplayer@1.1.4/browser/index.js" charset="utf-8"></script>
 <script type="text/javascript">
 var videourl = $("#prism-player").attr("data-url")
-const prismplayer = new window.Player({
+const prismplayer = new Player({
   id: 'prism-player',
-  //url: 'http://s3.pstatp.com/cdn/expire-1-M/byted-player-videos/1.0.3/xgplayer-demo.mp4',
   url: videourl,
   ignores: ['volume', 'time'],
   whitelist: [''],
   playsinline: true,
   width: '100%',
   height: '100%',
-  inactive: 5000,
-  closeVideoTouch: true,
-  playBtn: {
-    constPath: '',
-    playPath: 'M576,363L810,512L576,661zM342,214L576,363L576,661L342,810z',
-    pausePath: 'M598,214h170v596h-170v-596zM256 810v-596h170v596h-170z',
-    scale: 0.04
-  },
 })
 $("#prism-player").hide()
 prismplayer.on('ended',function(){

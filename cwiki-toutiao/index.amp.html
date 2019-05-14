@@ -11,7 +11,7 @@ body{font-family: -apple-system,helvetica,sans-serif;-ms-text-size-adjust: 100%;
 header,section,footer,img{display:block;margin:0;padding:0;}
 em{font-style:normal;}
 input,img{vertical-align:middle;border:0;}
-a{color:#2A90D7;text-decoration:none;-webkit-touch-callout:none;-webkit-user-select:none;}
+a{color:#2A90D7;text-decoration:none;-webkit-touch-callout:none;}
 a:active{color:#2581C1;outline:0}
 html,body{height:100%;}
 .cblue{color:#0077cc;}
@@ -168,6 +168,16 @@ body button{padding:0;border:none;background:none;outline: none;}
 .related li a em{display: block;margin-top:10px;font-size: 12px;line-height:12px;color: #999;}
 .related li:last-child{width:auto;max-width:calc((100vw - 111px)/3 + 21px);margin-right: 0;padding-right:17px;}
 /*同义词*/.synonym{background: #FAFAFA;line-height: 1.5;padding:10px 17px;font-size: 16px;}
+/*视频*/
+.figure-video{overflow:hidden;position:relative;}
+.cover-video{position:absolute;left:0;right:0;top:0;bottom:0;z-index:2;background-size:cover;background-repeat:no-repeat;}
+.cover-video img{display:block;width:100%;height:100%;}
+.title-video{position:absolute;bottom:0;left:0;right:0;padding:38px 17px 17px;min-height:45px;background-image: linear-gradient(-180deg, rgba(0,0,0,0.00) 0%, rgba(0,0,0,0.00) 5%, rgba(0,0,0,0.02) 10%, rgba(0,0,0,0.03) 15%, rgba(0,0,0,0.05) 19%, rgba(0,0,0,0.08) 23%, rgba(0,0,0,0.11) 27%, rgba(0,0,0,0.15) 31%, rgba(0,0,0,0.18) 35%, rgba(0,0,0,0.22) 39%, rgba(0,0,0,0.26) 43%, rgba(0,0,0,0.31) 46%, rgba(0,0,0,0.35) 50%, rgba(0,0,0,0.39) 54%, rgba(0,0,0,0.44) 57%, rgba(0,0,0,0.48) 61%, rgba(0,0,0,0.52) 65%, rgba(0,0,0,0.56) 69%, rgba(0,0,0,0.59) 72%, rgba(0,0,0,0.62) 77%, rgba(0,0,0,0.65) 81%, rgba(0,0,0,0.67) 85%, rgba(0,0,0,0.69) 90%, rgba(0,0,0,0.70) 95%, rgba(0,0,0,0.70) 100%);}
+.title-video .ico-play{float:left;display:black;width:44px;height: 44px;margin-right: 10px;}
+.title-video p{line-height: 1;color:#fff;}
+.title-video strong{display: block;margin-bottom: 2px;line-height: 1;color:#fff;overflow : hidden;text-overflow: ellipsis;display: -webkit-box;-webkit-line-clamp: 2;-webkit-box-orient: vertical;font-size:16px;font-weight: normal;line-height:20px;}
+.title-video span{font-size: 12px;display: inline-block;margin-right: 12px;}
+.videoLogo{position:absolute;top:7px;left:17px;display: block;width:71px;height: 17.87px;}
     </style>
     <!--bind--><script async custom-element="amp-bind" src="https://cdn.ampproject.org/v0/amp-bind-0.1.js"></script>
     <!--目录跳转--><script async custom-element="amp-sidebar" src="https://cdn.ampproject.org/v0/amp-sidebar-0.1.js"></script>
@@ -194,12 +204,12 @@ body button{padding:0;border:none;background:none;outline: none;}
     <amp-img lightbox="caption" src="//a1.att.hudong.com/33/86/50200014992522154426860542085_w.jpg" width="268" height="175"></amp-img>
     <figcaption>摘要图</figcaption>
   </figure>-->
-  <!--宽高比小于0.8（仅修改图片路径）-->
+  <!--宽高比小于0.8（仅修改图片路径）
   <figure class="zyimg cut">
     <em class="bg" style="background-image:url('//a0.att.hudong.com/24/93/20300545093656155546933587217_w.jpg')"></em>
     <amp-img lightbox="caption" src="//a0.att.hudong.com/24/93/20300545093656155546933587217_w.jpg" layout="responsive" width="100" height="66"></amp-img>
     <figcaption>摘要图</figcaption>
-  </figure>
+  </figure>-->
   <!--宽高比0.8~1（仅修改图片路径）
   <figure class="zyimg">
     <em class="bg" style="background-image:url('//a1.att.hudong.com/70/29/01300542281368141301295593358_w.jpg')"></em>
@@ -212,6 +222,23 @@ body button{padding:0;border:none;background:none;outline: none;}
     <amp-img lightbox="caption" src="//a0.att.hudong.com/12/67/50200009239445155366674601000_w.jpg" width="60vw" height="78vw"></amp-img>
     <figcaption>摘要图</figcaption>
   </figure>-->
+  <div class="figure-video">
+    <amp-video id="hyrwVideo"
+      controls
+      width="375"
+      height="211"
+      layout="responsive"
+      src="//s3.pstatp.com/cdn/expire-1-M/byted-player-videos/1.0.3/xgplayer-demo.mp4">
+    </amp-video>
+    <div class="cover-video" id="vodeo-cover" style="background-image:url(//p3.pstatp.com/origin/392f0004364baf03c17a);">
+      <svg class="videoLogo"><use xlink:href="#ico-shishuorw" /></svg>
+      <div class="title-video" role="button" tabindex="0" on="tap:vodeo-cover.hide, hyrwVideo.play"> 
+        <svg class="ico-play"><use xlink:href="#ico-play2" /></svg>
+        <strong>哈尔滨国际版宣传片发布，瞬间高大上了</strong>
+        <p><span>10万播放</span><span>11:44</span></p>
+      </div>
+    </div>
+  </div>
   <button class="btnSound" [class]="audioPlay.btnClass" on="tap:AMP.setState({audioPlay:{
     'show':'fixed-bot on','btnClass':'btnSound on',
     'page':'//www.huimg.cn/wap/js/soundManageForAMP.html?url=//a8.baike.com/9A/83/9A83E575336A53F9AFB0E03A42C62F40/BAECDF05E36C66FFFEBF5AAAA9497B48.mp3&text=迪丽热巴，中国内地女演员，1992年06月03日出生于新疆乌鲁木齐，毕业于上海戏剧学院。2010年参加由陆川导演的电影《王的盛宴》虞姬角色上海站海选进入娱乐圈；2015年3月在热拍电视剧《六扇门》中出演女一号苏溢清。2015年8月主演青春励志电视剧《麻辣变形计》；11月主演都市爱情电影《傲娇与偏见》。12月参演电影《怦然星动》上映。2016年1月出演古装言情电视剧《三生三世十里桃花》；9月，参演《漂亮的李慧珍》。2月，加盟浙江卫视《奔跑吧兄弟》第五季《奔跑吧》担任MC。2018年10月11日，第12届金鹰节开幕式晚会官方宣布第12届金鹰节金鹰女神为迪丽热巴。10月14日，凭借《漂亮的李慧珍》获得第12届中国金鹰电视艺术节观众喜爱的女演员奖、最具人气女演员奖。12月28日，获第五届“中国电视好演员”表彰盛典优秀演员奖。2019年2月4日，参加2019中央电视台春节联欢晚会，演唱歌曲《中国喜事》。3月2日，加盟综艺节目《创造营2019》担任男团发起人。'
